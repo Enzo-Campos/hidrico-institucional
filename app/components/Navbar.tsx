@@ -96,7 +96,7 @@ export default function Navbar() {
           {[
             { label: "Inicio", href: "/" },
             { label: "Produtos", href: "/produtos" },
-            { label: "Contato", href: "#contato" },
+            { label: "Contato", href: "/contato" },
           ].map(({ label, href }) => (
             <Link
               key={label}
