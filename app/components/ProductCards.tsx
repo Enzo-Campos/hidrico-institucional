@@ -1,17 +1,31 @@
 import Image from "next/image";
 
+const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
+
 const products = [
   {
-    category: "Pisos & Madeiras",
-    title: "Colas PU para pisos de madeira",
-    description: "FabCol PU 606 e linha completa para colagem de tábuas, tacos e engenheirados.",
-    cta: "Conhecer linha",
+    category: "Impermeabilizantes",
+    title: "FabFlex Impermeabilizante",
+    description:
+      "Impermeabilizante cimentício flexível para lajes, piscinas, reservatórios e áreas molhadas.",
+    cta: "Saiba mais",
+    images: [
+      { src: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, alt: "FabFlex Epóxi" },
+      { src: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, alt: "FabFlex Safe Deck" },
+      { src: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, alt: "FabFlex 700" },
+    ],
+    accent: "#22c55e",
   },
   {
-    category: "Grama Sintética",
-    title: "FabCol PU Grama Sintética",
-    description: "Aderência superior e resistência às intempéries para áreas esportivas e paisagísticas.",
-    cta: "Conhecer linha",
+    category: "FabCol",
+    title: "Cola Branca PVA",
+    description:
+      "Adesivo PVA (acetato de polivinila) base água para colagem de madeira com excelente acabamento. Versátil, de fácil aplicação e alto rendimento.",
+    cta: "Saiba mais",
+    images: [
+      { src: `${BASE}/abbd981f033e926e1507b68d4d9a5337-10.png`, alt: "FabCol Cola Grama Sintética" },
+    ],
+    accent: "#22c55e",
   },
 ];
 
@@ -22,49 +36,78 @@ export default function ProductCards() {
         {products.map((p) => (
           <div
             key={p.title}
-            className="relative rounded-2xl overflow-hidden min-h-[340px] flex flex-col justify-end group cursor-pointer"
+            className="relative rounded-2xl overflow-hidden flex flex-col group cursor-pointer"
+            style={{
+              background: "#111a11",
+              border: "1px solid #e7ebe8",
+              minHeight: 340,
+            }}
           >
-            {/* Background image */}
-            <Image
-              src="/assets/fabcol_apply.webp"
-              alt={p.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-
-            {/* Dark gradient overlay for text legibility */}
+            {/* Product image area */}
             <div
-              className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90"
+              className="relative flex items-end justify-center overflow-hidden"
+              style={{ height: 280 }}
+            >
+              {/* Green glow behind products */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center bottom, rgba(34,197,94,0.18) 0%, transparent 65%)",
+                }}
+              />
+
+              {/* Product images staggered */}
+              <div className="relative flex items-end justify-center gap-4 pb-4 px-6">
+                {p.images.map((img, i) => {
+                  const isCenter = i === 0;
+                  const rotations = [-6, 0, 5];
+                  return (
+                    <div
+                      key={img.alt}
+                      className="transition-transform duration-500 group-hover:scale-105"
+                      style={{
+                        transform: `rotate(${rotations[i] ?? 0}deg)`,
+                        zIndex: isCenter ? 10 : 5,
+                        filter: "drop-shadow(0 12px 24px rgba(0,0,0,0.7))",
+                      }}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={isCenter ? 200 : 150}
+                        height={isCenter ? 200 : 150}
+                        className="object-contain"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Text content */}
+            <div
+              className="flex flex-col flex-1 p-7 pt-5"
               style={{
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)",
+                borderTop: "1px solid #e7ebe8",
+                background: "#ffffff",
               }}
-            />
-
-            {/* Subtle green accent */}
-            <div
-              className="absolute top-5 right-5 w-2 h-2 rounded-full opacity-60"
-              style={{ background: "#007800" }}
-            />
-
-            {/* Content */}
-            <div className="relative z-10 p-7">
+            >
               <p
-                className="text-xs font-bold uppercase tracking-[0.18em] mb-3"
+                className="text-xs font-bold uppercase tracking-[0.18em] mb-2"
                 style={{ color: "#007800" }}
               >
                 {p.category}
               </p>
-              <h3 className="text-white font-extrabold text-2xl leading-tight mb-2">
+              <h3 className="text-gray-900 font-extrabold text-xl leading-tight mb-2">
                 {p.title}
               </h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-5">
+              <p className="text-sm leading-relaxed mb-5 text-gray-500">
                 {p.description}
               </p>
               <a
-                href="#contato"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-3"
+                href="/produtos"
+                className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-3"
                 style={{ color: "#007800" }}
               >
                 {p.cta}

@@ -39,7 +39,7 @@ export default function WhySection() {
               className="text-xs font-bold uppercase tracking-[0.2em] mb-4"
               style={{ color: "#007800" }}
             >
-              Por que Hídrico Química
+              Por que Hídrico Química?
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Engenharia química com{" "}
@@ -48,7 +48,7 @@ export default function WhySection() {
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-sm lg:text-right">
             Cada formulação nasce no laboratório com foco em desempenho real do
-            aplicador — aderência, cura e resistência sem concessões.
+            aplicador, aderência, cura e resistência sem concessões.
           </p>
         </div>
 
