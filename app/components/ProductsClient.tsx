@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
 
 const categories = [
   {
@@ -10,13 +13,13 @@ const categories = [
     description:
       "Linha completa de adesivos poliuretânicos para colagem de tábuas, tacos e pisos engenheirados.",
     products: [
-      { tag: "PU Monocomponente", title: "FabCol Cola para Pisos de Madeira PU", featured: true, tagColor: "#007800", fichaTecnica: "/assets/FABCOL PU Boletim Técnico.pdf" },
-      { tag: "Alto Desempenho", title: "FabCol Cola para Pisos de Madeira PU 606", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABCOL PU 606 Boletim Técnico Rev-05-23.pdf" },
-      { tag: "Lançamento 2026", title: "FabCol FUSION XT", featured: false, tagColor: "#d97706" },
-      { tag: "Piso sobre Piso", title: "FabCol Cola para Piso sobre Piso PU PP", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABCOL PU PP Boletim Técnico Rev-05-23.pdf" },
-      { tag: "Fixação Vertical", title: "FabCol Fixação Vertical PU 780 SV", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABCOL PU 780 SV Boletim Técnico Rev-05-23.pdf" },
-      { tag: "MS Polímero", title: "FabCol MS H410", featured: false, tagColor: "#007800" },
-      { tag: "Alta Resistência", title: "FabCol Cola para Pisos de Madeira PU 604", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABCOL PU 604 Boletim Técnico Rev-05-23.pdf" },
+      { tag: "PU Monocomponente", title: "FabCol Cola para Pisos de Madeira PU", featured: true, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-boletim-tecnico.pdf", image: `${BASE}/5b44b92d77ed46c07f21fb8a8911ca35-13.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu" },
+      { tag: "Alto Desempenho", title: "FabCol Cola para Pisos de Madeira PU 606", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-606-boletim-tecnico-rev0523.pdf", image: `${BASE}/b2143404f2019a7f475eeaace8e76131-4.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-606" },
+      { tag: "Lançamento 2026", title: "FabCol FUSION XT", featured: false, tagColor: "#d97706", image: `${BASE}/1d75df36011faa86215a5b9753553542-15.png`, href: "/produtos/fabcol-fusion-xt" },
+      { tag: "Piso sobre Piso", title: "FabCol Cola para Piso sobre Piso PU PP", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-pp-boletim-tecnico-rev0523.pdf", image: `${BASE}/ed5f023e7121f0d2c2dab31402e2edc2-5.png`, href: "/produtos/fabcol-cola-para-piso-sobre-piso-pu-pp" },
+      { tag: "Fixação Vertical", title: "FabCol Fixação Vertical PU 780 SV", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-780-sv-boletim-tecnico--rev0523.pdf", image: `${BASE}/ef671627207b666f02def555305046ba-6.png`, href: "/produtos/fabcol-fixacao-vertical-pu-780-sv" },
+      { tag: "MS Polímero", title: "FabCol MS H410", featured: false, tagColor: "#007800", image: `${BASE}/d1b51e7d527ab98de07290b7b187848d-16.png`, href: "/produtos/fabcol-ms-h410" },
+      { tag: "Alta Resistência", title: "FabCol Cola para Pisos de Madeira PU 604", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-604-boletim-tecnico-rev0523.pdf", image: `${BASE}/5db05631849acb911bd0f8edba01a39d-3.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-604" },
     ],
   },
   {
@@ -25,7 +28,7 @@ const categories = [
     description:
       "Aditivos especiais para preparo e nivelamento de contrapisos cimentícios com alta performance.",
     products: [
-      { tag: "Aditivo Cimentício", title: "Fabfix Aditivo para Contrapiso Cimentício", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABFIX 500 Boletim Técnico Rev-05-23.pdf" },
+      { tag: "Aditivo Cimentício", title: "Fabfix Aditivo para Contrapiso Cimentício", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabfix-500-boletim-tecnico-rev0523.pdf", image: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`, href: "/produtos/fabfix-aditivo-para-contrapiso-cimenticio" },
     ],
   },
   {
@@ -34,7 +37,7 @@ const categories = [
     description:
       "Massas e selantes para acabamento e vedação de juntas em superfícies de madeira.",
     products: [
-      { tag: "Massa Acrílica", title: "Fabmell Massa Acrílica para Madeira P51", featured: false, tagColor: "#007800" },
+      { tag: "Massa Acrílica", title: "Fabmell Massa Acrílica para Madeira P51", featured: false, tagColor: "#007800", image: `${BASE}/f460d9420f163c384572d4c15aaa3f18-11.png`, href: "/produtos/fabmell-massa-acrilica-para-madeira-p51" },
     ],
   },
   {
@@ -43,7 +46,7 @@ const categories = [
     description:
       "Cola PU formulada para fixação segura de grama sintética em áreas esportivas e paisagísticas.",
     products: [
-      { tag: "Cola PU", title: "FabCol Cola para Grama Sintética", featured: false, tagColor: "#007800" },
+      { tag: "Cola PU", title: "FabCol Cola para Grama Sintética", featured: false, tagColor: "#007800", image: `${BASE}/3fad2454102a29721d08dc9b58cde0dd-12.png`, href: "/produtos/fabcol-cola-para-grama-sintetica" },
     ],
   },
   {
@@ -52,7 +55,7 @@ const categories = [
     description:
       "Soluções versáteis para colagem de peças de madeira em marcenaria, carpintaria e construção.",
     products: [
-      { tag: "PVA", title: "FabCol Cola Branca PVA", featured: false, tagColor: "#007800" },
+      { tag: "PVA", title: "FabCol Cola Branca PVA", featured: false, tagColor: "#007800", image: `${BASE}/abbd981f033e926e1507b68d4d9a5337-10.png`, href: "/produtos/fabcol-cola-branca-pva" },
     ],
   },
   {
@@ -61,7 +64,7 @@ const categories = [
     description:
       "Adesivos de alta fixação para instalação de rodapés em madeira, MDF e polímeros.",
     products: [
-      { tag: "Super Cola", title: "FabCol Super Cola para Rodapé", featured: false, tagColor: "#007800" },
+      { tag: "Super Cola", title: "FabCol Super Cola para Rodapé", featured: false, tagColor: "#007800", image: `${BASE}/0a96e274f217d6a71b610290efe8472f-9.png`, href: "/produtos/fabcol-super-cola-para-rodape" },
     ],
   },
   {
@@ -70,9 +73,9 @@ const categories = [
     description:
       "Soluções de impermeabilização para contrapisos e superfícies de madeira expostas à umidade.",
     products: [
-      { tag: "Primer Epóxi", title: "FabFlex Impermeabilizante de Contrapiso Primer Epóxi", featured: false, tagColor: "#007800", fichaTecnica: "/assets/Fabflex Primer Epóxi Boletim Técnico Rev 12-24.pdf" },
-      { tag: "Proteção para Madeira", title: "FabFlex Impermeabilizante para Madeira Safe Deck", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABFLEX SAFE DECK Boletim Técnico Rev-08-23.pdf" },
-      { tag: "Contrapiso", title: "FabFlex Impermeabilizante de Contrapiso", featured: false, tagColor: "#007800", fichaTecnica: "/assets/FABFLEX 700 Boletim Técnico Rev-05-23.pdf" },
+      { tag: "Primer Epóxi", title: "FabFlex Impermeabilizante de Contrapiso Primer Epóxi", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-primer-epoxi-boletim-tecnico-rev-1224.pdf", image: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, href: "/produtos/fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
+      { tag: "Proteção para Madeira", title: "FabFlex Impermeabilizante para Madeira Safe Deck", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-safe-deck-boletim-tecnico-rev0823.pdf", image: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, href: "/produtos/fabflex-impermeabilizante-para-madeira-safe-deck" },
+      { tag: "Contrapiso", title: "FabFlex Impermeabilizante de Contrapiso", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-700-boletim-tecnico-rev0523.pdf", image: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, href: "/produtos/fabflex-impermeabilizante-de-contrapiso" },
     ],
   },
 ];
@@ -130,30 +133,44 @@ export default function ProductsClient() {
               {cat.products.map((p) => (
                 <div
                   key={p.title}
-                  className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)]"
+                  className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] group"
                   style={{
                     border: p.featured ? "1.5px solid #007800" : "1px solid #e7ebe8",
                   }}
                 >
-                  {/* Placeholder image */}
+                  {/* Product image */}
                   <div
-                    className="relative w-full h-44 flex items-center justify-center overflow-hidden"
+                    className="relative w-full flex items-center justify-center overflow-hidden"
                     style={{
-                      background: p.featured
-                        ? "linear-gradient(135deg, #e8f5e8 0%, #d4ead4 100%)"
-                        : "linear-gradient(135deg, #f4f5f0 0%, #e9ebe6 100%)",
+                      height: 280,
+                      background: "#0a1a0a",
                     }}
                   >
-                    <PlaceholderIcon featured={p.featured} />
-                    {p.featured && (
-                      <div
-                        className="absolute inset-0 opacity-10 pointer-events-none"
-                        style={{
-                          backgroundImage:
-                            "radial-gradient(circle at 70% 30%, #007800 0%, transparent 60%)",
-                        }}
-                      />
-                    )}
+                    {/* Radial green glow */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background:
+                          "radial-gradient(ellipse at center, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.08) 45%, transparent 70%)",
+                      }}
+                    />
+                    {/* Bottom floor fade */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 pointer-events-none"
+                      style={{
+                        height: "40%",
+                        background:
+                          "linear-gradient(to top, rgba(10,26,10,0.9) 0%, transparent 100%)",
+                      }}
+                    />
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      width={320}
+                      height={320}
+                      className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
+                      style={{ maxHeight: 240, filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))" }}
+                    />
                   </div>
 
                   {/* Card body */}
@@ -185,7 +202,7 @@ export default function ProductsClient() {
                         </a>
                       )}
                       <Link
-                        href="#contato"
+                        href={p.href ?? "#contato"}
                         className="px-4 py-1.5 rounded-full text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors"
                         style={{ border: "1px solid #d1d5db" }}
                       >
@@ -238,30 +255,6 @@ function FilterPill({
     >
       {label}
     </button>
-  );
-}
-
-function PlaceholderIcon({ featured }: { featured: boolean }) {
-  const color = featured ? "#007800" : "#6b7280";
-  return (
-    <svg
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      fill="none"
-      style={{ opacity: featured ? 0.5 : 0.25 }}
-    >
-      <rect x="14" y="4" width="20" height="8" rx="2" stroke={color} strokeWidth="2" />
-      <path
-        d="M18 12v6l-8 16a4 4 0 0 0 3.58 5.8h20.84A4 4 0 0 0 38 34L30 18v-6"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M18 28h12" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <circle cx="24" cy="34" r="2" fill={color} />
-    </svg>
   );
 }
 

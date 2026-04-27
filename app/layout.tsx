@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased">
         <Navbar />
         <main>{children}</main>
+        <Footer />
         <WhatsAppButton />
       </body>
     </html>
