@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "../../data/products";
+import ProductVideoSection from "../../components/ProductVideoSection";
+import Breadcrumb from "../../components/Breadcrumb";
 
 export async function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -52,13 +54,14 @@ export default async function ProductPage({
         <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div>
-            <div className="flex items-center gap-2 text-xs mb-8" style={{ color: "#4b5563" }}>
-              <Link href="/" className="hover:text-white transition-colors">Início</Link>
-              <span>/</span>
-              <Link href="/produtos" className="hover:text-white transition-colors">Produtos</Link>
-              <span>/</span>
-              <span style={{ color: "#22c55e" }}>{p.title}</span>
-            </div>
+            <Breadcrumb
+              className="mb-8"
+              crumbs={[
+                { label: "Início", href: "/" },
+                { label: "Produtos", href: "/produtos" },
+                { label: p.title },
+              ]}
+            />
 
             <span
               className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-5 border"
@@ -195,32 +198,13 @@ export default async function ProductPage({
             )}
           </div>
 
-          {/* Steps */}
+          {/* Steps + Video tabs */}
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#007800" }}>
               Modo de Uso
             </p>
             <h2 className="text-2xl font-extrabold text-gray-900 mb-8">Como aplicar</h2>
-            <div className="flex flex-col gap-4">
-              {p.steps.map((s) => (
-                <div
-                  key={s.n}
-                  className="flex gap-5 items-start rounded-2xl p-5 border transition-all hover:border-green-200"
-                  style={{ background: "#f9faf9", borderColor: "#e7ebe8" }}
-                >
-                  <span
-                    className="shrink-0 text-2xl font-black leading-none mt-0.5"
-                    style={{ color: "rgba(0,120,0,0.15)" }}
-                  >
-                    {s.n}
-                  </span>
-                  <div>
-                    <p className="font-bold text-gray-900 mb-1">{s.title}</p>
-                    <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ProductVideoSection steps={p.steps} video={p.video} />
           </div>
         </div>
       </section>

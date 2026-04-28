@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumb from "../components/Breadcrumb";
 
 /* ── Icons ──────────────────────────────────────────────────────── */
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
@@ -93,23 +94,28 @@ export default function ContatoPage() {
     return (
         <div className="min-h-screen" style={{ background: "#f4f5f0" }}>
 
-            {/* HERO */}
-            <section className="relative overflow-hidden pt-32 pb-16 px-6" style={{ background: "#0a1a0a" }}>
-                <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 60% 50%, rgba(34,197,94,0.18) 0%, transparent 68%)" }} />
-                <div className="relative max-w-3xl mx-auto text-center">
-                    <div className="flex items-center justify-center gap-2 text-xs mb-6" style={{ color: "#4b5563" }}>
-                        <Link href="/" className="hover:text-white transition-colors">Início</Link>
-                        <span>/</span>
-                        <span style={{ color: "#22c55e" }}>Contato</span>
-                    </div>
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-5">
-                        Entre em <span style={{ color: "#22c55e" }}>contato</span>
+            {/* PAGE HEADER */}
+            <div className="pt-32 pb-14 px-6" style={{ background: "#fff", borderBottom: "1px solid #e7ebe8" }}>
+                <div className="max-w-7xl mx-auto">
+                    <Breadcrumb
+                      className="mb-4"
+                      variant="light"
+                      crumbs={[
+                        { label: "Início", href: "/" },
+                        { label: "Contato" },
+                      ]}
+                    />
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] mb-3" style={{ color: "#007800" }}>
+                        Hídrico Química
+                    </p>
+                    <h1 className="font-black text-gray-900 mb-4 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                        Entre em contato
                     </h1>
-                    <p className="text-gray-400 text-base leading-relaxed max-w-xl mx-auto">
-                        Nossa equipe está pronta para atender você, tire dúvidas, solicite um orçamento ou encontre o produto ideal para sua obra.
+                    <p className="text-gray-500 text-base leading-relaxed" style={{ maxWidth: 520 }}>
+                        Nossa equipe está pronta para atender você — tire dúvidas, solicite um orçamento ou encontre o produto ideal para sua obra.
                     </p>
                 </div>
-            </section>
+            </div>
 
             {/* MAIN GRID */}
             <section className="py-20 px-6">
