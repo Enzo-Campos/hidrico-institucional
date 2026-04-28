@@ -18,6 +18,7 @@ export interface Product {
   steps: ProductStep[];
   surfaces: string[];
   fichaTecnica?: string;
+  video?: string;
   related: RelatedProduct[];
 }
 

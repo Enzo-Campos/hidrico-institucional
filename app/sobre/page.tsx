@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumb from "../components/Breadcrumb";
 
 export const metadata: Metadata = {
     title: "Sobre | Hídrico Química",
@@ -31,60 +32,46 @@ export default function SobrePage() {
     return (
         <div className="min-h-screen" style={{ background: "#f4f5f0" }}>
 
-            {/* ── HERO ── */}
-            <section className="relative overflow-hidden pt-32 pb-20 px-6" style={{ background: "#0a1a0a" }}>
-                <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 65% 50%, rgba(34,197,94,0.18) 0%, transparent 68%)" }} />
-                <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-                    {/* Left copy */}
-                    <div>
-                        <div className="flex items-center gap-2 text-xs mb-6" style={{ color: "#4b5563" }}>
-                            <Link href="/" className="hover:text-white transition-colors">Início</Link>
-                            <span>/</span>
-                            <span style={{ color: "#22c55e" }}>Sobre</span>
-                        </div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#22c55e" }}>
-                            Conheça nossa história
-                        </p>
-                        <h1 className="font-extrabold text-white leading-tight mb-5" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                            Mais de 30 anos{" "}
-                            <span style={{ color: "#22c55e" }}>transformando</span>{" "}
-                            o mercado de pisos
-                        </h1>
-                        <p className="text-base leading-relaxed mb-8" style={{ color: "#9ca3af" }}>
-                            A Hídrico Química nasceu da paixão pela química aplicada à construção. Desde então, desenvolvemos produtos que unem tecnologia de ponta, segurança e respeito ao meio ambiente — servindo profissionais e empresas em todo o Brasil.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <Link
-                                href="/produtos"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all hover:brightness-110 active:scale-95"
-                                style={{ background: "#22c55e", color: "#071007" }}
-                            >
-                                Conhecer produtos
-                            </Link>
-                            <Link
-                                href="/contato"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-colors hover:bg-white/5"
-                                style={{ border: "1.5px solid rgba(255,255,255,0.2)", color: "#fff" }}
-                            >
-                                Fale conosco
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Right image */}
-                    <div className="relative rounded-3xl overflow-hidden" style={{ height: 420 }}>
-                        <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(to right, #0a1a0a 0%, transparent 30%)" }} />
-                        <Image
-                            src="/assets/quem-somos.jpeg"
-                            alt="Equipe Hídrico Química"
-                            fill
-                            className="object-cover"
-                            priority
+            {/* ── PAGE HEADER ── */}
+            <div className="pt-32 pb-14 px-6" style={{ background: "#fff", borderBottom: "1px solid #e7ebe8" }}>
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end gap-10">
+                    <div className="flex-1">
+                        <Breadcrumb
+                          className="mb-4"
+                          variant="light"
+                          crumbs={[
+                            { label: "Início", href: "/" },
+                            { label: "Sobre" },
+                          ]}
                         />
+                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] mb-3" style={{ color: "#007800" }}>
+                            Hídrico Química
+                        </p>
+                        <h1 className="font-black text-gray-900 mb-4 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                            Mais de 30 anos transformando o mercado de pisos
+                        </h1>
+                        <p className="text-gray-500 text-base leading-relaxed" style={{ maxWidth: 520 }}>
+                            A Hídrico Química nasceu da paixão pela química aplicada à construção. Tecnologia de ponta, segurança e respeito ao meio ambiente — servindo profissionais em todo o Brasil.
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap gap-3 shrink-0">
+                        <Link
+                            href="/produtos"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all hover:brightness-110 active:scale-95"
+                            style={{ background: "#007800", color: "#fff" }}
+                        >
+                            Conhecer produtos
+                        </Link>
+                        <Link
+                            href="/contato"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-colors"
+                            style={{ border: "1.5px solid #e7ebe8", color: "#374151" }}
+                        >
+                            Fale conosco
+                        </Link>
                     </div>
                 </div>
-            </section>
+            </div>
 
             {/* ── STATS ── */}
             <section className="py-14 px-6" style={{ background: "#fff" }}>

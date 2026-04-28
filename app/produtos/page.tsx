@@ -30,23 +30,21 @@ export const metadata: Metadata = {
 
 export default function ProdutosPage() {
   return (
-    <div className="min-h-screen pt-16" style={{ background: "#f4f5f0" }}>
-      {/* Page header — static, rendered server-side for SEO */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
-        <p
-          className="text-xs font-bold uppercase tracking-[0.2em] mb-4"
-          style={{ color: "#007800" }}
-        >
-          Linha FabCol
-        </p>
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Produtos para cada{" "}
-            <span style={{ color: "#007800" }}>superfície</span>.
+    <div className="min-h-screen" style={{ background: "#f4f5f0" }}>
+      {/* Page header */}
+      <div className="pt-32 pb-14 px-6" style={{ background: "#fff", borderBottom: "1px solid #e7ebe8" }}>
+        <div className="max-w-7xl mx-auto">
+          <p
+            className="text-[10px] font-bold uppercase tracking-[0.3em] mb-3"
+            style={{ color: "#007800" }}
+          >
+            Hídrico Química
+          </p>
+          <h1 className="font-black text-gray-900 mb-4 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            Produtos para cada superfície
           </h1>
-          <p className="text-gray-500 text-base leading-relaxed max-w-md">
-            Conheça nossa linha completa de adesivos, colas e selantes —
-            desenvolvidos para entregar máxima performance em campo.
+          <p className="text-gray-500 text-base leading-relaxed" style={{ maxWidth: 520 }}>
+            Linha completa de adesivos, colas e selantes desenvolvidos para entregar máxima performance em campo.
           </p>
         </div>
       </div>
