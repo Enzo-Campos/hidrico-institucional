@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-
-const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
+import { products } from "../data/products";
 
 const categories = [
   {
@@ -12,78 +12,55 @@ const categories = [
     name: "Colagem de Pisos de Madeira",
     description:
       "Linha completa de adesivos poliuretânicos para colagem de tábuas, tacos e pisos engenheirados.",
-    products: [
-      { tag: "PU Monocomponente", title: "FabCol Cola para Pisos de Madeira PU", featured: true, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-boletim-tecnico.pdf", image: `${BASE}/5b44b92d77ed46c07f21fb8a8911ca35-13.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu" },
-      { tag: "Alto Desempenho", title: "FabCol Cola para Pisos de Madeira PU 606", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-606-boletim-tecnico-rev0523.pdf", image: `${BASE}/b2143404f2019a7f475eeaace8e76131-4.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-606" },
-      { tag: "Lançamento 2026", title: "FabCol FUSION XT", featured: false, tagColor: "#d97706", image: `${BASE}/1d75df36011faa86215a5b9753553542-15.png`, href: "/produtos/fabcol-fusion-xt" },
-      { tag: "Piso sobre Piso", title: "FabCol Cola para Piso sobre Piso PU PP", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-pp-boletim-tecnico-rev0523.pdf", image: `${BASE}/ed5f023e7121f0d2c2dab31402e2edc2-5.png`, href: "/produtos/fabcol-cola-para-piso-sobre-piso-pu-pp" },
-      { tag: "Fixação Vertical", title: "FabCol Fixação Vertical PU 780 SV", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-780-sv-boletim-tecnico--rev0523.pdf", image: `${BASE}/ef671627207b666f02def555305046ba-6.png`, href: "/produtos/fabcol-fixacao-vertical-pu-780-sv" },
-      { tag: "MS Polímero", title: "FabCol MS H410", featured: false, tagColor: "#007800", image: `${BASE}/d1b51e7d527ab98de07290b7b187848d-16.png`, href: "/produtos/fabcol-ms-h410" },
-      { tag: "Alta Resistência", title: "FabCol Cola para Pisos de Madeira PU 604", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabcol-pu-604-boletim-tecnico-rev0523.pdf", image: `${BASE}/5db05631849acb911bd0f8edba01a39d-3.png`, href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-604" },
-    ],
   },
   {
     id: "aditivos-contra-pisos",
     name: "Aditivos para Contra Pisos",
     description:
       "Aditivos especiais para preparo e nivelamento de contrapisos cimentícios com alta performance.",
-    products: [
-      { tag: "Aditivo Cimentício", title: "Fabfix Aditivo para Contrapiso Cimentício", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabfix-500-boletim-tecnico-rev0523.pdf", image: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`, href: "/produtos/fabfix-aditivo-para-contrapiso-cimenticio" },
-    ],
   },
   {
     id: "calafetos",
     name: "Calafetos",
     description:
       "Massas e selantes para acabamento e vedação de juntas em superfícies de madeira.",
-    products: [
-      { tag: "Massa Acrílica", title: "Fabmell Massa Acrílica para Madeira P51", featured: false, tagColor: "#007800", image: `${BASE}/f460d9420f163c384572d4c15aaa3f18-11.png`, href: "/produtos/fabmell-massa-acrilica-para-madeira-p51" },
-    ],
   },
   {
     id: "cola-grama-sintetica",
     name: "Cola para Grama Sintética",
     description:
       "Cola PU formulada para fixação segura de grama sintética em áreas esportivas e paisagísticas.",
-    products: [
-      { tag: "Cola PU", title: "FabCol Cola para Grama Sintética", featured: false, tagColor: "#007800", image: `${BASE}/3fad2454102a29721d08dc9b58cde0dd-12.png`, href: "/produtos/fabcol-cola-para-grama-sintetica" },
-    ],
   },
   {
     id: "colagem-madeira-geral",
     name: "Colagem de Madeira em Geral",
     description:
       "Soluções versáteis para colagem de peças de madeira em marcenaria, carpintaria e construção.",
-    products: [
-      { tag: "PVA", title: "FabCol Cola Branca PVA", featured: false, tagColor: "#007800", image: `${BASE}/abbd981f033e926e1507b68d4d9a5337-10.png`, href: "/produtos/fabcol-cola-branca-pva" },
-    ],
   },
   {
     id: "colagem-rodapes",
     name: "Colagem de Rodapés",
     description:
       "Adesivos de alta fixação para instalação de rodapés em madeira, MDF e polímeros.",
-    products: [
-      { tag: "Super Cola", title: "FabCol Super Cola para Rodapé", featured: false, tagColor: "#007800", image: `${BASE}/0a96e274f217d6a71b610290efe8472f-9.png`, href: "/produtos/fabcol-super-cola-para-rodape" },
-    ],
   },
   {
     id: "impermeabilizantes",
     name: "Impermeabilizantes",
     description:
       "Soluções de impermeabilização para contrapisos e superfícies de madeira expostas à umidade.",
-    products: [
-      { tag: "Primer Epóxi", title: "FabFlex Impermeabilizante de Contrapiso Primer Epóxi", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-primer-epoxi-boletim-tecnico-rev-1224.pdf", image: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, href: "/produtos/fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
-      { tag: "Proteção para Madeira", title: "FabFlex Impermeabilizante para Madeira Safe Deck", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-safe-deck-boletim-tecnico-rev0823.pdf", image: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, href: "/produtos/fabflex-impermeabilizante-para-madeira-safe-deck" },
-      { tag: "Contrapiso", title: "FabFlex Impermeabilizante de Contrapiso", featured: false, tagColor: "#007800", fichaTecnica: "/assets/fabflex-700-boletim-tecnico-rev0523.pdf", image: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, href: "/produtos/fabflex-impermeabilizante-de-contrapiso" },
-    ],
   },
 ];
 
 export default function ProductsClient() {
-  const [active, setActive] = useState("all");
+  const searchParams = useSearchParams();
+  const [active, setActive] = useState(() => searchParams.get("categoria") ?? "all");
 
-  const visible =
+  useEffect(() => {
+    const cat = searchParams.get("categoria");
+    if (cat) setActive(cat);
+  }, [searchParams]);
+
+  const visibleCategories =
     active === "all"
       ? categories
       : categories.filter((c) => c.id === active);
@@ -116,106 +93,103 @@ export default function ProductsClient() {
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-6 pb-24 flex flex-col gap-16 pt-12">
-        {visible.map((cat) => (
-          <div key={cat.id} id={cat.id}>
-            <div className="mb-6">
-              <h2 className="text-2xl font-extrabold text-gray-900 mb-1">
-                {cat.name}
-              </h2>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
-                {cat.description}
-              </p>
-            </div>
+        {visibleCategories.map((cat) => {
+          const catProducts = products.filter((p) => p.category === cat.name);
+          if (catProducts.length === 0) return null;
+          return (
+            <div key={cat.id} id={cat.id}>
+              <div className="mb-6">
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-1">
+                  {cat.name}
+                </h2>
+                <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
+                  {cat.description}
+                </p>
+              </div>
 
-            <hr style={{ borderColor: "#e7ebe8" }} className="mb-8" />
+              <hr style={{ borderColor: "#e7ebe8" }} className="mb-8" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {cat.products.map((p) => (
-                <div
-                  key={p.title}
-                  className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] group"
-                  style={{
-                    border: p.featured ? "1.5px solid #007800" : "1px solid #e7ebe8",
-                  }}
-                >
-                  {/* Product image */}
-                  <Link
-                    href={p.href ?? "#contato"}
-                    className="relative w-full flex items-center justify-center overflow-hidden"
-                    style={{
-                      height: 280,
-                      background: "#0a1a0a",
-                    }}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {catProducts.map((p) => (
+                  <div
+                    key={p.slug}
+                    className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] group"
+                    style={{ border: "1px solid #e7ebe8" }}
                   >
-                    {/* Radial green glow */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background:
-                          "radial-gradient(ellipse at center, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.08) 45%, transparent 70%)",
-                      }}
-                    />
-                    {/* Bottom floor fade */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 pointer-events-none"
-                      style={{
-                        height: "40%",
-                        background:
-                          "linear-gradient(to top, rgba(10,26,10,0.9) 0%, transparent 100%)",
-                      }}
-                    />
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      width={320}
-                      height={320}
-                      className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
-                      style={{ maxHeight: 240, filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))" }}
-                    />
-                  </Link>
+                    {/* Product image */}
+                    <Link
+                      href={`/produtos/${p.slug}`}
+                      className="relative w-full flex items-center justify-center overflow-hidden"
+                      style={{ height: 280, background: "#0a1a0a" }}
+                    >
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                          background:
+                            "radial-gradient(ellipse at center, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.08) 45%, transparent 70%)",
+                        }}
+                      />
+                      <div
+                        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+                        style={{
+                          height: "40%",
+                          background:
+                            "linear-gradient(to top, rgba(10,26,10,0.9) 0%, transparent 100%)",
+                        }}
+                      />
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        width={320}
+                        height={320}
+                        className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
+                        style={{ maxHeight: 240, filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))" }}
+                      />
+                    </Link>
 
-                  {/* Card body */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-start justify-between gap-3 mb-3">
-                      <span
-                        className="text-[10px] font-bold uppercase tracking-[0.18em]"
-                        style={{ color: p.tagColor }}
-                      >
-                        {p.tag}
-                      </span>
-                      <ArrowIcon />
-                    </div>
-
-                    <h3 className="text-gray-900 font-bold text-base leading-snug mb-auto">
-                      {p.title}
-                    </h3>
-
-                    <div className="mt-5 flex items-center gap-2">
-                      {p.fichaTecnica && (
-                        <a
-                          href={p.fichaTecnica}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-1.5 rounded-full text-xs font-bold text-white transition-all hover:brightness-110"
-                          style={{ background: "#007800" }}
+                    {/* Card body */}
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <span
+                          className="text-[10px] font-bold uppercase tracking-[0.18em]"
+                          style={{ color: p.tagColor }}
                         >
-                          Ficha Técnica
-                        </a>
-                      )}
-                      <Link
-                        href={p.href ?? "#contato"}
-                        className="px-4 py-1.5 rounded-full text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors"
-                        style={{ border: "1px solid #d1d5db" }}
-                      >
-                        Saiba mais
-                      </Link>
+                          {p.tag}
+                        </span>
+                        <ArrowIcon />
+                      </div>
+
+                      <h3 className="text-gray-900 font-bold text-base leading-snug mb-auto">
+                        {p.title}
+                      </h3>
+
+                      <div className="mt-5 flex items-center gap-2">
+                        {p.fichaTecnica && (
+                          <a
+                            href={p.fichaTecnica}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-1.5 rounded-full text-xs font-bold text-white transition-all hover:brightness-110"
+                            style={{ background: "#007800" }}
+                          >
+                            Ficha Técnica
+                          </a>
+                        )}
+                        <Link
+                          href={`/produtos/${p.slug}`}
+                          className="px-4 py-1.5 rounded-full text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors"
+                          style={{ border: "1px solid #d1d5db" }}
+                        >
+                          Saiba mais
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </>
   );

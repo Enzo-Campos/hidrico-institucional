@@ -44,7 +44,7 @@ export default function WoodFlooringSection() {
                     </p>
                     <h2 className="font-extrabold text-gray-900 leading-tight mb-6" style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}>
                         Soluções para{" "} <br></br>
-                        <span style={{ color: "#007800" }}>Pisos de Madeira</span>
+                        <span style={{ color: "#007800" }}>pisos de madeira</span>
                     </h2>
                     <p className="text-gray-500 text-base leading-relaxed mb-4">
                         A performance de um piso de madeira vai além do material, e projetos de alto padrão exigem soluções à altura. É na etapa de instalação que se define a estabilidade do sistema, a resposta às variações do ambiente e a durabilidade ao longo do tempo.

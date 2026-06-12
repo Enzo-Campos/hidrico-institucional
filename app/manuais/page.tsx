@@ -86,12 +86,7 @@ const allProducts: ProductEntry[] = [
     product: "FabCol MS H410", tag: "MS Polímero", slug: "fabcol-ms-h410",
     fds: [{ label: "FDS", file: "/assets/FDS/FDS MS H410/MS H410.pdf" }],
   },
-  {
-    id: "pu-base", category: "pisos",
-    product: "FabCol Cola para Pisos de Madeira PU", tag: "PU Monocomponente", slug: "fabcol-cola-para-pisos-de-madeira-pu",
-    boletim: { file: "/assets/fabcol-pu-boletim-tecnico.pdf" },
-  },
-  // ── Grama Sintética ──
+// ── Grama Sintética ──
   {
     id: "grama", category: "grama",
     product: "FabCol Cola para Grama Sintética", tag: "Cola PU", slug: "fabcol-cola-para-grama-sintetica",

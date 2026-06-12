@@ -11,7 +11,6 @@ export default function Home() {
       <WhySection />
       <WoodFlooringSection />
       <ProductCards />
-      <QuemSomosSection />
     </>
   );
 }

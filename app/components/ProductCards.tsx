@@ -5,10 +5,11 @@ const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
 const products = [
   {
     category: "Impermeabilizantes",
-    title: "FabFlex Impermeabilizante",
+    title: "Linha FabFlex",
     description:
       "Impermeabilizante cimentício flexível para lajes, piscinas, reservatórios e áreas molhadas.",
     cta: "Saiba mais",
+    href: "/produtos?categoria=impermeabilizantes",
     images: [
       { src: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, alt: "FabFlex Epóxi" },
       { src: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, alt: "FabFlex Safe Deck" },
@@ -17,11 +18,12 @@ const products = [
     accent: "#22c55e",
   },
   {
-    category: "FabCol",
-    title: "Cola Branca PVA",
+    category: "Colagem",
+    title: "FabCol Cola Branca PVA",
     description:
-      "Adesivo PVA (acetato de polivinila) base água para colagem de madeira com excelente acabamento. Versátil, de fácil aplicação e alto rendimento.",
+      "Adesivo PVA (acetato de polivinila) à base de água para colagem de madeira com excelente acabamento. Versátil, de fácil aplicação e alto rendimento.",
     cta: "Saiba mais",
+    href: "/produtos?categoria=colagem-madeira-geral",
     images: [
       { src: `${BASE}/abbd981f033e926e1507b68d4d9a5337-10.png`, alt: "FabCol Cola Grama Sintética" },
     ],
@@ -106,7 +108,7 @@ export default function ProductCards() {
                 {p.description}
               </p>
               <a
-                href="/produtos"
+                href={p.href ?? "/produtos"}
                 className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-3"
                 style={{ color: "#007800" }}
               >

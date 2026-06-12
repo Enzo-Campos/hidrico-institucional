@@ -66,14 +66,14 @@ export default function QuemSomosInline() {
           <h1 className="font-black text-gray-900 leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Mais de 30 anos transformando o mercado de pisos
           </h1>
-          <p className="text-gray-500 text-base leading-relaxed mb-8" style={{ maxWidth: 480 }}>
-            A Hídrico Química nasceu da paixão pela química aplicada à construção civil. Desenvolvemos sistemas completos de ancoragem e impermeabilização com tecnologia de ponta, segurança e consciência ambiental — 100% nacionais.
+          <p className="text-gray-500 text-base leading-relaxed mb-8">
+            A Hídrico Química nasceu da paixão pela química aplicada à construção civil. Desenvolvemos sistemas completos de ancoragem e impermeabilização com tecnologia de ponta, segurança e consciência ambiental.
           </p>
 
           <div className="flex gap-8 mb-8">
             {[
               { value: "+30", label: "Anos de mercado" },
-              { value: "+15", label: "Linhas de produto" },
+              { value: "+15", label: "Produtos" },
               { value: "100%", label: "Nacional" },
             ].map(({ value, label }) => (
               <div key={label}>
@@ -89,7 +89,7 @@ export default function QuemSomosInline() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all hover:brightness-110 active:scale-95"
               style={{ background: "#007800", color: "#fff" }}
             >
-              Conhecer produtos
+              Conheça nossos produtos
             </Link>
             <Link
               href="/contato"

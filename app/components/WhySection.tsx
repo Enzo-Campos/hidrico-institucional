@@ -2,7 +2,7 @@ const features = [
   {
     number: "01",
     icon: <QualityIcon />,
-    title: "Produtos de Qualidade",
+    title: "Produtos de qualidade",
     description: (
       <>
         Os adesivos mais completos para{" "}

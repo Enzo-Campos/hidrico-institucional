@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ProductsClient from "../components/ProductsClient";
 
 export const metadata: Metadata = {
@@ -41,7 +42,7 @@ export default function ProdutosPage() {
             Hídrico Química
           </p>
           <h1 className="font-black text-gray-900 mb-4 leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Produtos para cada superfície
+            Soluções para cada superfície
           </h1>
           <p className="text-gray-500 text-base leading-relaxed" style={{ maxWidth: 520 }}>
             Linha completa de adesivos, colas e selantes desenvolvidos para entregar máxima performance em campo.
@@ -50,7 +51,9 @@ export default function ProdutosPage() {
       </div>
 
       {/* Interactive filter + grid */}
-      <ProductsClient />
+      <Suspense>
+        <ProductsClient />
+      </Suspense>
     </div>
   );
 }

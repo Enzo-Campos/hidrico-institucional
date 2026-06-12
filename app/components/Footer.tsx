@@ -56,8 +56,7 @@ function FacebookIcon() {
 }
 
 const produtos = [
-    { label: "Cola para Pisos de Madeira PU", href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu" },
-    { label: "Cola PU 606", href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-606" },
+{ label: "Cola PU 606", href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-606" },
     { label: "Cola PU 604", href: "/produtos/fabcol-cola-para-pisos-de-madeira-pu-604" },
     { label: "Cola para Grama Sintética", href: "/produtos/fabcol-cola-para-grama-sintetica" },
     { label: "Impermeabilizante Contrapiso", href: "/produtos/fabflex-impermeabilizante-de-contrapiso" },
@@ -67,7 +66,7 @@ const produtos = [
 const links = [
     { label: "Início", href: "/" },
     { label: "Produtos", href: "/produtos" },
-    { label: "Blog", href: "/blog" },
+    // { label: "Blog", href: "/blog" },
     { label: "Manuais", href: "/manuais" },
     { label: "Contato", href: "/contato" },
 ];
@@ -96,7 +95,7 @@ export default function Footer() {
                     <div className="flex gap-3">
                         {[
                             { href: "https://www.instagram.com/hidricoquimica", icon: <InstagramIcon />, label: "Instagram" },
-                            { href: "https://www.facebook.com/hidricoquimica", icon: <FacebookIcon />, label: "Facebook" },
+                            { href: "https://www.facebook.com/people/H%C3%ADdrico-qu%C3%ADmica/100090403385944/?locale=pt_BR", icon: <FacebookIcon />, label: "Facebook" },
                             { href: "https://wa.me/554137982010", icon: <WhatsAppIcon />, label: "WhatsApp" },
                         ].map(s => (
                             <a
@@ -149,10 +148,18 @@ export default function Footer() {
                     <ul className="flex flex-col gap-4">
                         <li className="flex items-start gap-2.5">
                             <span className="mt-0.5 shrink-0" style={{ color: "#31b144" }}><MapPinIcon /></span>
-                            <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                            <a
+                                href="https://maps.app.goo.gl/hsPmZxj6kzAADrcJ8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm leading-relaxed transition-colors"
+                                style={{ color: "rgba(255,255,255,0.55)" }}
+                                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
+                                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)")}
+                            >
                                 Rod. Gumercindo Boza, 18500<br />
                                 Campo Magro — PR, 83535-000
-                            </span>
+                            </a>
                         </li>
                         <li className="flex items-center gap-2.5">
                             <span style={{ color: "#31b144" }}><PhoneIcon /></span>
