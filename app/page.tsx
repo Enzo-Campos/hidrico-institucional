@@ -2,6 +2,8 @@ import Hero from "./components/Hero";
 import WhySection from "./components/WhySection";
 import WoodFlooringSection from "./components/WoodFlooringSection";
 import ProductCards from "./components/ProductCards";
+import QuemSomosSection from "./components/QuemSomosSection";
+
 export default function Home() {
   return (
     <>
@@ -9,6 +11,7 @@ export default function Home() {
       <WhySection />
       <WoodFlooringSection />
       <ProductCards />
+      <QuemSomosSection />
     </>
   );
 }
