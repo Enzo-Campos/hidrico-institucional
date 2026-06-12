@@ -139,7 +139,8 @@ export default function ProductsClient() {
                   }}
                 >
                   {/* Product image */}
-                  <div
+                  <Link
+                    href={p.href ?? "#contato"}
                     className="relative w-full flex items-center justify-center overflow-hidden"
                     style={{
                       height: 280,
@@ -171,7 +172,7 @@ export default function ProductsClient() {
                       className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
                       style={{ maxHeight: 240, filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))" }}
                     />
-                  </div>
+                  </Link>
 
                   {/* Card body */}
                   <div className="p-6 flex flex-col flex-1">
