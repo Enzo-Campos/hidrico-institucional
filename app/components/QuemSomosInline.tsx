@@ -26,7 +26,7 @@ export default function QuemSomosInline() {
           >
             <video
               ref={videoRef}
-              src="/assets/institucional.mp4"
+              src="/assets/institucional.webm"
               autoPlay
               muted
               loop

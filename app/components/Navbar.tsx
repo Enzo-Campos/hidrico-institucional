@@ -32,9 +32,8 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {[
-            { label: "Inicio", href: "/" },
+            { label: "Início", href: "/" },
             { label: "Produtos", href: "/produtos" },
-            { label: "Blog", href: "/blog" },
             { label: "Manuais", href: "/manuais" },
             { label: "Contato", href: "/contato" },
           ].map(({ label, href }) => (
