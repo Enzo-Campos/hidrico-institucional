@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
+const BASE = "/assets/produtos";
 
 const lines = [
   {
@@ -52,7 +52,6 @@ const MARQUEE =
 
 export default function Hero() {
   const [active, setActive] = useState(0);
-  const cat = lines[active];
 
   return (
     <section

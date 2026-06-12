@@ -54,6 +54,7 @@ const categories = [
 export default function ProductsClient() {
   const searchParams = useSearchParams();
   const [active, setActive] = useState(() => searchParams.get("categoria") ?? "all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const cat = searchParams.get("categoria");
@@ -65,36 +66,87 @@ export default function ProductsClient() {
       ? categories
       : categories.filter((c) => c.id === active);
 
+  const q = search.trim().toLowerCase();
+
   return (
     <>
-      {/* Sticky category filter */}
+      {/* Category filter + search — sticky desktop only */}
       <div
-        className="sticky top-16 z-40 border-b"
+        className="md:sticky top-16 z-40 border-b"
         style={{ background: "#f4f5f0", borderColor: "#e7ebe8" }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center gap-2 py-3">
-            <FilterPill
-              label="Todos"
-              active={active === "all"}
-              onClick={() => setActive("all")}
-            />
-            {categories.map((cat) => (
+          <div className="flex flex-col gap-2 py-3">
+
+            {/* Pills — wrap freely */}
+            <div className="flex items-center gap-2 flex-wrap">
               <FilterPill
-                key={cat.id}
-                label={cat.name}
-                active={active === cat.id}
-                onClick={() => setActive(cat.id)}
+                label="Todos"
+                active={active === "all"}
+                onClick={() => setActive("all")}
               />
-            ))}
+              {categories.map((cat) => (
+                <FilterPill
+                  key={cat.id}
+                  label={cat.name}
+                  active={active === cat.id}
+                  onClick={() => setActive(cat.id)}
+                />
+              ))}
+            </div>
+
+            {/* Search — own row, right-aligned on desktop */}
+            <div className="flex md:justify-end">
+              <div className="relative w-full md:w-auto">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <SearchIcon />
+                </span>
+                <input
+                  type="text"
+                  placeholder="Buscar produto..."
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  className="w-full md:w-52 pl-8 pr-8 py-1.5 rounded-full text-sm outline-none"
+                  style={{ background: "#fff", border: "1px solid #d1d5db", color: "#111827" }}
+                />
+                {search && (
+                  <button
+                    onClick={() => setSearch("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    aria-label="Limpar busca"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-6 pb-24 flex flex-col gap-16 pt-12">
+        {visibleCategories.every((cat) => {
+          const ps = products.filter(
+            (p) => p.category === cat.name && (!q || p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q))
+          );
+          return ps.length === 0;
+        }) && (
+          <div className="flex flex-col items-center justify-center py-24 text-center">
+            <p className="text-gray-400 font-semibold mb-2">Nenhum produto encontrado</p>
+            <button
+              onClick={() => setSearch("")}
+              className="text-sm font-semibold"
+              style={{ color: "#007800" }}
+            >
+              Limpar busca
+            </button>
+          </div>
+        )}
         {visibleCategories.map((cat) => {
-          const catProducts = products.filter((p) => p.category === cat.name);
+          const catProducts = products.filter(
+            (p) => p.category === cat.name && (!q || p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q))
+          );
           if (catProducts.length === 0) return null;
           return (
             <div key={cat.id} id={cat.id}>
@@ -230,6 +282,14 @@ function FilterPill({
     >
       {label}
     </button>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
   );
 }
 

@@ -1,4 +1,4 @@
-const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
+const BASE = "/assets/produtos";
 
 export interface ProductSpec { label: string; value: string }
 export interface ProductFeature { title: string; desc: string }

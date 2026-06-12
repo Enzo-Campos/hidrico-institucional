@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const BASE = "https://www.hidricoquimica.com.br/admin/assets/imgs/seo/grande";
+const BASE = "/assets/produtos";
 
 const products = [
   {

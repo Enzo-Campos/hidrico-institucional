@@ -200,7 +200,7 @@ export default function ManuaisPage() {
                 Hídrico Química
               </p>
               <h1 className="font-black text-gray-900 leading-none mb-3" style={{ fontSize: "clamp(2rem,4vw,2.75rem)" }}>
-                Manuais & Downloads
+                Manuais & Boletins
               </h1>
               <p className="text-gray-500 text-sm leading-relaxed" style={{ maxWidth: 520 }}>
                 Boletins Técnicos e Fichas de Dados de Segurança (FDS) dos produtos Hídrico Química disponíveis para download em PDF.

@@ -33,6 +33,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {[
             { label: "Início", href: "/" },
+            { label: "Sobre nós", href: "/sobre" },
             { label: "Produtos", href: "/produtos" },
             { label: "Manuais", href: "/manuais" },
             { label: "Contato", href: "/contato" },
@@ -99,6 +100,7 @@ export default function Navbar() {
             { label: "Produtos", href: "/produtos" },
            /* { label: "Blog", href: "/blog" },*/
             { label: "Manuais", href: "/manuais" },
+            { label: "Sobre nós", href: "/sobre" },
             { label: "Contato", href: "/contato" },
           ].map(({ label, href }) => (
             <Link
