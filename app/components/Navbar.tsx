@@ -92,8 +92,8 @@ export default function Navbar() {
         <div
           className="md:hidden px-6 py-4 flex flex-col gap-4"
           style={{
-            background: "rgba(10,26,10,0.96)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            background: "#ffffff",
+            borderTop: "1px solid #e5e7eb",
           }}
         >
           {[
@@ -109,7 +109,7 @@ export default function Navbar() {
               href={href}
               onClick={() => setOpen(false)}
               className="text-sm font-medium"
-              style={{ color: "#d1d5db" }}
+              style={{ color: "#374151" }}
             >
               {label}
             </Link>
@@ -117,7 +117,7 @@ export default function Navbar() {
           <a
             href="tel:+554137982010"
             className="mt-2 flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold w-fit"
-            style={{ background: "#111827", color: "#ffffff" }}
+            style={{ background: "#007800", color: "#ffffff" }}
           >
             <PhoneIcon />
             (41) 3797-2170
