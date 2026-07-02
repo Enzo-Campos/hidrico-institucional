@@ -82,11 +82,27 @@ const categories = [
 
 export default function ProductsClient() {
   const [active, setActive] = useState("all");
+  const [search, setSearch] = useState("");
 
-  const visible =
+  const byCategory =
     active === "all"
       ? categories
       : categories.filter((c) => c.id === active);
+
+  const query = search.trim().toLowerCase();
+  const visible = query
+    ? byCategory
+        .map((cat) => ({
+          ...cat,
+          products: cat.products.filter(
+            (p) =>
+              p.title.toLowerCase().includes(query) ||
+              p.tag.toLowerCase().includes(query) ||
+              cat.name.toLowerCase().includes(query)
+          ),
+        }))
+        .filter((cat) => cat.products.length > 0)
+    : byCategory;
 
   return (
     <>
@@ -96,26 +112,51 @@ export default function ProductsClient() {
         style={{ background: "#f4f5f0", borderColor: "#e7ebe8" }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center gap-2 py-3">
-            <FilterPill
-              label="Todos"
-              active={active === "all"}
-              onClick={() => setActive("all")}
-            />
-            {categories.map((cat) => (
-              <FilterPill
-                key={cat.id}
-                label={cat.name}
-                active={active === cat.id}
-                onClick={() => setActive(cat.id)}
+          <div className="flex flex-wrap items-center gap-3 py-3">
+            <div className="relative">
+              <span
+                className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                style={{ color: "#9ca3af" }}
+              >
+                <SearchIcon />
+              </span>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Buscar produto..."
+                className="pl-9 pr-3 py-1.5 rounded-full text-sm outline-none transition-colors"
+                style={{ border: "1px solid #d1d5db", background: "#fff", width: 220 }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#007800")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#d1d5db")}
               />
-            ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <FilterPill
+                label="Todos"
+                active={active === "all"}
+                onClick={() => setActive("all")}
+              />
+              {categories.map((cat) => (
+                <FilterPill
+                  key={cat.id}
+                  label={cat.name}
+                  active={active === cat.id}
+                  onClick={() => setActive(cat.id)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-6 pb-24 flex flex-col gap-16 pt-12">
+        {visible.length === 0 && (
+          <p className="text-center text-gray-500 text-sm py-12">
+            Nenhum produto encontrado.
+          </p>
+        )}
         {visible.map((cat) => (
           <div key={cat.id} id={cat.id}>
             <div className="mb-6">
@@ -255,6 +296,24 @@ function FilterPill({
     >
       {label}
     </button>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
   );
 }
 

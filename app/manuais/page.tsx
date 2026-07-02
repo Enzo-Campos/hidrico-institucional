@@ -30,7 +30,7 @@ const allProducts: ProductEntry[] = [
   {
     id: "fusion-xt", category: "pisos",
     product: "FabCol FUSION XT", tag: "Lançamento 2026", slug: "fabcol-fusion-xt",
-    boletim: { file: "/assets/BOLETINS/FABCOL FUSION XT/FABCOL®️ FUSION XT · Boletim Técnico · Rev-0326.pdf", rev: "Mar/26" },
+    boletim: { file: "/assets/BOLETINS/FABCOL FUSION XT/FUSION XT Boletim Tecnico.pdf", rev: "Mar/26" },
     fds: [
       { label: "Comp. A", file: "/assets/FDS/Fusion X/Cópia de FABCOL FUSION X (COMPONENTE A) - FDS - 0010.pdf" },
       { label: "Comp. B", file: "/assets/FDS/Fusion X/Cópia de FABCOL FUSION X (COMPONENTE  B) - FDS - 0011.docxREVISAO.pdf" },
@@ -205,7 +205,7 @@ export default function ManuaisPage() {
                 Hídrico Química
               </p>
               <h1 className="font-black text-gray-900 leading-none mb-3" style={{ fontSize: "clamp(2rem,4vw,2.75rem)" }}>
-                Manuais & Downloads
+                Manuais & Boletins
               </h1>
               <p className="text-gray-500 text-sm leading-relaxed" style={{ maxWidth: 520 }}>
                 Boletins Técnicos e Fichas de Dados de Segurança (FDS) dos produtos Hídrico Química disponíveis para download em PDF.
