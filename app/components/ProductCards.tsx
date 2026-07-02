@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-const BASE = "/assets/produtos";
-
 const products = [
   {
     category: "Impermeabilizantes",
@@ -10,11 +8,7 @@ const products = [
       "Impermeabilizante cimentício flexível para lajes, piscinas, reservatórios e áreas molhadas.",
     cta: "Saiba mais",
     href: "/produtos?categoria=impermeabilizantes",
-    images: [
-      { src: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, alt: "FabFlex Epóxi" },
-      { src: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, alt: "FabFlex Safe Deck" },
-      { src: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, alt: "FabFlex 700" },
-    ],
+    banner: "/assets/Banner_628x280px_Fabflex.png",
     accent: "#22c55e",
   },
   {
@@ -24,9 +18,7 @@ const products = [
       "Adesivo PVA (acetato de polivinila) à base de água para colagem de madeira com excelente acabamento. Versátil, de fácil aplicação e alto rendimento.",
     cta: "Saiba mais",
     href: "/produtos?categoria=colagem-madeira-geral",
-    images: [
-      { src: `${BASE}/abbd981f033e926e1507b68d4d9a5337-10.png`, alt: "FabCol Cola Grama Sintética" },
-    ],
+    banner: "/assets/Banner_628x280px_PVA.png",
     accent: "#22c55e",
   },
 ];
@@ -47,44 +39,15 @@ export default function ProductCards() {
           >
             {/* Product image area */}
             <div
-              className="relative flex items-end justify-center overflow-hidden"
+              className="relative overflow-hidden"
               style={{ height: 280 }}
             >
-              {/* Green glow behind products */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center bottom, rgba(34,197,94,0.18) 0%, transparent 65%)",
-                }}
+              <Image
+                src={p.banner}
+                alt={p.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-
-              {/* Product images staggered */}
-              <div className="relative flex items-end justify-center gap-4 pb-4 px-6">
-                {p.images.map((img, i) => {
-                  const isCenter = i === 0;
-                  const rotations = [-6, 0, 5];
-                  return (
-                    <div
-                      key={img.alt}
-                      className="transition-transform duration-500 group-hover:scale-105"
-                      style={{
-                        transform: `rotate(${rotations[i] ?? 0}deg)`,
-                        zIndex: isCenter ? 10 : 5,
-                        filter: "drop-shadow(0 12px 24px rgba(0,0,0,0.7))",
-                      }}
-                    >
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        width={isCenter ? 200 : 150}
-                        height={isCenter ? 200 : 150}
-                        className="object-contain"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
             </div>
 
             {/* Text content */}

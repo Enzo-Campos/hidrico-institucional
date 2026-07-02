@@ -35,6 +35,7 @@ export default function Navbar() {
             { label: "Início", href: "/" },
             { label: "Sobre nós", href: "/sobre" },
             { label: "Produtos", href: "/produtos" },
+            { label: "Blog", href: "/blog" },
             { label: "Manuais", href: "/manuais" },
             { label: "Contato", href: "/contato" },
           ].map(({ label, href }) => (
@@ -98,7 +99,7 @@ export default function Navbar() {
           {[
             { label: "Inicio", href: "/" },
             { label: "Produtos", href: "/produtos" },
-           /* { label: "Blog", href: "/blog" },*/
+            { label: "Blog", href: "/blog" },
             { label: "Manuais", href: "/manuais" },
             { label: "Sobre nós", href: "/sobre" },
             { label: "Contato", href: "/contato" },

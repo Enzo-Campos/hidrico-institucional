@@ -17,11 +17,12 @@ interface ProductEntry {
 
 /* ── Categories ──────────────────────────────────────── */
 const categories = [
-  { id: "pisos",    label: "Colagem de Pisos de Madeira" },
-  { id: "grama",    label: "Cola para Grama Sintética" },
-  { id: "imperme",  label: "Impermeabilizantes" },
-  { id: "aditivos", label: "Aditivos para Contra Pisos" },
-  { id: "outros",   label: "Outros Produtos" },
+  { id: "pisos",     label: "Colagem de Pisos de Madeira" },
+  { id: "grama",     label: "Cola para Grama Sintética" },
+  { id: "imperme",   label: "Impermeabilizantes" },
+  { id: "aditivos",  label: "Aditivos para Contra Pisos" },
+  { id: "vinilicos", label: "Linha para Vinílicos" },
+  { id: "outros",    label: "Outros Produtos" },
 ];
 
 /* ── Products ────────────────────────────────────────── */
@@ -70,15 +71,6 @@ const allProducts: ProductEntry[] = [
     fds: [
       { label: "Comp. A", file: "/assets/FDS/Fabcol SV/Cópia de FABCOL PU 780 SV (COMPONENTE A) - FDS - 0013.pdf" },
       { label: "Comp. B", file: "/assets/FDS/Fabcol SV/Cópia de FABCOL PU 780 SV (COMPONENTE B) - FDS - 0014.docxREVISAO.pdf" },
-    ],
-  },
-  {
-    id: "teck-7k", category: "pisos",
-    product: "FabCol PU TECK 7K", tag: "Alta Performance",
-    boletim: { file: "/assets/BOLETINS/Fabcol Teck 7K/Cópia de FABCOL PU TECK 7K®️ · Boletim Técnico · Rev-01-26.pdf", rev: "Jan/26" },
-    fds: [
-      { label: "Comp. A", file: "/assets/FDS/Fabcol Teck 7K/Cópia de FAB COL TECH 7K (COMPONENTE A) - FDS - 0003.pdf" },
-      { label: "Comp. B", file: "/assets/FDS/Fabcol Teck 7K/Cópia de FAB COL TECH 7K (COMPONENTE  B) - FDS - 0004.pdf" },
     ],
   },
   {
@@ -146,6 +138,34 @@ const allProducts: ProductEntry[] = [
     product: "FabMell Massa Acrílica para Madeira P51", tag: "Massa Acrílica", slug: "fabmell-massa-acrilica-para-madeira-p51",
     boletim: { file: "/assets/BOLETINS/FabMell/Cópia de FABMELL· Boletim Técnico.pdf" },
     fds: [{ label: "FDS", file: "/assets/FDS/FabMell/Cópia de FABMELL MASSA FIXA P51 - FDS - 0019.pdf" }],
+  },
+  // ── Linha para Vinílicos ──
+  {
+    id: "fabgrip-3k", category: "vinilicos",
+    product: "FabGrip 3K", tag: "Alta Aderência", slug: "fabgrip-3k",
+    boletim: { file: "/assets/BOLETINS/FabGrip 3K/Cópia de FICHA TÉCNICA PRIMER SOBREPOSICAO GRIP.pdf" },
+    fds: [{ label: "FDS", file: "/assets/FDS/FabGrip 3K/Cópia de FDS PRIMER SOBREPOSICAO GRIP.pdf" }],
+  },
+  {
+    id: "fabprimer-3k", category: "vinilicos",
+    product: "FabPrimer 3K", tag: "Alto Rendimento", slug: "fabprimer-3k",
+    boletim: { file: "/assets/BOLETINS/FabPrimer 3K/Cópia de FICHA TÉCNICA PRIME BASE.pdf" },
+    fds: [{ label: "FDS", file: "/assets/FDS/FabPrimer 3K/Cópia de FDS PRIME BASE.pdf" }],
+  },
+  {
+    id: "fabblock-793", category: "vinilicos",
+    product: "FabBlock 793", tag: "Barreira de Umidade", slug: "fabblock-793",
+    boletim: { file: "/assets/BOLETINS/FabBlock 793/Cópia de FICHA TÉCNICA BLOQUEADOR DE VAPOR DE UMIDADE (1).pdf" },
+    fds: [
+      { label: "Comp. A", file: "/assets/FDS/FabBlock 793/Cópia de FDS Bloqueador de Vapor de Umidade A (1).pdf" },
+      { label: "Comp. B", file: "/assets/FDS/FabBlock 793/Cópia de FDS Bloqueador de Vapor de Umidade B (1).pdf" },
+    ],
+  },
+  {
+    id: "fabvinil-501", category: "vinilicos",
+    product: "FabVinil 501", tag: "Fixação Imediata", slug: "fabvinil-501",
+    boletim: { file: "/assets/BOLETINS/FabVinil 501/Cópia de FICHA TÉCNICA ADESIVO PARA PISOS VINILICOS.pdf" },
+    fds: [{ label: "FDS", file: "/assets/FDS/FabVinil 501/Cópia de FDS ADESIVO PARA PISOS VINILICOS (1).pdf" }],
   },
 ];
 

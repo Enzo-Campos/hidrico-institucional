@@ -6,6 +6,12 @@ import { getProduct, products } from "../../data/products";
 import ProductVideoSection from "../../components/ProductVideoSection";
 import Breadcrumb from "../../components/Breadcrumb";
 
+function getColorChart(slug: string): string | null {
+  if (slug.startsWith("fabcol-")) return "/assets/hq-catalogo-cores_digital_colas.jpg";
+  if (slug.startsWith("fabmell-")) return "/assets/hq-catalogo-cores_digital_massas.png";
+  return null;
+}
+
 export async function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
@@ -32,6 +38,8 @@ export default async function ProductPage({
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) notFound();
+
+  const colorChart = getColorChart(p.slug);
 
   return (
     <div className="min-h-screen" style={{ background: "#f4f5f0" }}>
@@ -194,6 +202,23 @@ export default async function ProductPage({
                 <p className="text-sm text-green-900 leading-relaxed">
                   Para dados completos de rendimento, embalagens disponíveis e ensaios, baixe o boletim técnico oficial.
                 </p>
+              </div>
+            )}
+
+            {colorChart && (
+              <div className="mt-6 rounded-2xl overflow-hidden border" style={{ borderColor: "#e7ebe8" }}>
+                <div className="px-5 py-4" style={{ background: "#f9faf9", borderBottom: "1px solid #e7ebe8" }}>
+                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#007800" }}>
+                    Cores Disponíveis
+                  </p>
+                </div>
+                <Image
+                  src={colorChart}
+                  alt={`Catálogo de cores — ${p.title}`}
+                  width={700}
+                  height={990}
+                  className="w-full h-auto"
+                />
               </div>
             )}
           </div>

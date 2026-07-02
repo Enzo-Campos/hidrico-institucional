@@ -49,6 +49,12 @@ const categories = [
     description:
       "Soluções de impermeabilização para contrapisos e superfícies de madeira expostas à umidade.",
   },
+  {
+    id: "linha-para-vinilicos",
+    name: "Linha para Vinílicos",
+    description:
+      "Sistema completo de preparação, proteção, aderência e fixação para a instalação de pisos vinílicos.",
+  },
 ];
 
 export default function ProductsClient() {
@@ -68,64 +74,87 @@ export default function ProductsClient() {
 
   const q = search.trim().toLowerCase();
 
+  function navBtn(isActive: boolean) {
+    return isActive
+      ? { background: "#007800", color: "#fff" }
+      : { color: "#4b5563" };
+  }
+
+  function navHover(isActive: boolean, el: HTMLButtonElement, enter: boolean) {
+    if (!isActive) el.style.background = enter ? "#f0fdf4" : "transparent";
+  }
+
   return (
-    <>
-      {/* Category filter + search — sticky desktop only */}
-      <div
-        className="md:sticky top-16 z-40 border-b"
-        style={{ background: "#f4f5f0", borderColor: "#e7ebe8" }}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col gap-2 py-3">
+    <div className="max-w-7xl mx-auto px-6 pb-24 pt-10 flex flex-col lg:flex-row gap-8 items-start">
 
-            {/* Pills — wrap freely */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <FilterPill
-                label="Todos"
-                active={active === "all"}
-                onClick={() => setActive("all")}
-              />
-              {categories.map((cat) => (
-                <FilterPill
-                  key={cat.id}
-                  label={cat.name}
-                  active={active === cat.id}
-                  onClick={() => setActive(cat.id)}
-                />
-              ))}
-            </div>
+      {/* ── SIDEBAR ── */}
+      <aside className="w-full lg:w-64 shrink-0 lg:sticky lg:top-24">
 
-            {/* Search — own row, right-aligned on desktop */}
-            <div className="flex md:justify-end">
-              <div className="relative w-full md:w-auto">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <SearchIcon />
-                </span>
-                <input
-                  type="text"
-                  placeholder="Buscar produto..."
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
-                  className="w-full md:w-52 pl-8 pr-8 py-1.5 rounded-full text-sm outline-none"
-                  style={{ background: "#fff", border: "1px solid #d1d5db", color: "#111827" }}
-                />
-                {search && (
-                  <button
-                    onClick={() => setSearch("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                    aria-label="Limpar busca"
-                  >
-                    ×
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
+        {/* Search */}
+        <div className="relative mb-6">
+          <span
+            className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ color: "#9ca3af" }}
+          >
+            <SearchIcon />
+          </span>
+          <input
+            type="text"
+            placeholder="Buscar produto..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="w-full pl-9 pr-8 py-2.5 rounded-xl text-sm outline-none"
+            style={{ background: "#fff", border: "1px solid #e7ebe8", color: "#111827" }}
+          />
+          {search && (
+            <button
+              onClick={() => setSearch("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              aria-label="Limpar busca"
+            >
+              ×
+            </button>
+          )}
         </div>
-      </div>
 
-      {/* Categories */}
-      <div className="max-w-7xl mx-auto px-6 pb-24 flex flex-col gap-16 pt-12">
+        {/* Category filter */}
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 px-1">Categoria</p>
+        <nav className="flex flex-col gap-1">
+          <button
+            onClick={() => setActive("all")}
+            className="w-full text-left px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+            style={navBtn(active === "all")}
+            onMouseEnter={e => navHover(active === "all", e.currentTarget as HTMLButtonElement, true)}
+            onMouseLeave={e => navHover(active === "all", e.currentTarget as HTMLButtonElement, false)}
+          >
+            Todas as categorias
+            <span className="float-right text-xs font-normal mt-0.5" style={{ opacity: 0.6 }}>
+              {products.filter(p => !q || p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q)).length}
+            </span>
+          </button>
+          {categories.map((cat) => {
+            const count = products.filter(
+              (p) => p.category === cat.name && (!q || p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q))
+            ).length;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActive(cat.id)}
+                className="w-full text-left px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                style={navBtn(active === cat.id)}
+                onMouseEnter={e => navHover(active === cat.id, e.currentTarget as HTMLButtonElement, true)}
+                onMouseLeave={e => navHover(active === cat.id, e.currentTarget as HTMLButtonElement, false)}
+              >
+                {cat.name}
+                <span className="float-right text-xs font-normal mt-0.5" style={{ opacity: 0.6 }}>{count}</span>
+              </button>
+            );
+          })}
+        </nav>
+      </aside>
+
+      {/* ── CONTENT ── */}
+      <div className="flex-1 min-w-0 flex flex-col gap-16">
         {visibleCategories.every((cat) => {
           const ps = products.filter(
             (p) => p.category === cat.name && (!q || p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q))
@@ -161,7 +190,7 @@ export default function ProductsClient() {
 
               <hr style={{ borderColor: "#e7ebe8" }} className="mb-8" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                 {catProducts.map((p) => (
                   <div
                     key={p.slug}
@@ -243,51 +272,13 @@ export default function ProductsClient() {
           );
         })}
       </div>
-    </>
-  );
-}
-
-function FilterPill({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-150 whitespace-nowrap cursor-pointer active:scale-95"
-      style={
-        active
-          ? { background: "#007800", color: "#fff", boxShadow: "0 2px 8px rgba(0,120,0,0.3)" }
-          : { background: "transparent", color: "#6b7280", border: "1px solid #d1d5db" }
-      }
-      onMouseEnter={e => {
-        if (!active) {
-          const el = e.currentTarget as HTMLButtonElement;
-          el.style.borderColor = "#007800";
-          el.style.color = "#007800";
-        }
-      }}
-      onMouseLeave={e => {
-        if (!active) {
-          const el = e.currentTarget as HTMLButtonElement;
-          el.style.borderColor = "#d1d5db";
-          el.style.color = "#6b7280";
-        }
-      }}
-    >
-      {label}
-    </button>
+    </div>
   );
 }
 
 function SearchIcon() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
   );

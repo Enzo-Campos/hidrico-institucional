@@ -2,91 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const CATEGORIES = ["Todos", "Pisos de Madeira", "Impermeabilização", "Grama Sintética", "Adesivos PU", "Técnico"];
-
-const CATEGORY_COLORS: Record<string, string> = {
-  "Pisos de Madeira":  "#92400e",
-  "Impermeabilização": "#1e40af",
-  "Grama Sintética":   "#166534",
-  "Adesivos PU":       "#007800",
-  "Técnico":           "#374151",
-};
-
-const CATEGORY_BG: Record<string, string> = {
-  "Pisos de Madeira":  "linear-gradient(135deg, #78350f 0%, #92400e 100%)",
-  "Impermeabilização": "linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)",
-  "Grama Sintética":   "linear-gradient(135deg, #14532d 0%, #166534 100%)",
-  "Adesivos PU":       "linear-gradient(135deg, #003d00 0%, #005700 100%)",
-  "Técnico":           "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
-};
-
-const posts = [
-  {
-    slug: "como-escolher-adesivo-piso-madeira",
-    category: "Pisos de Madeira",
-    title: "Como escolher o adesivo certo para cada tipo de piso de madeira",
-    excerpt: "Tábuas maciças, engenheiradas e tacos exigem formulações distintas. Conheça os critérios técnicos que definem a escolha ideal do adesivo PU para cada substrato e condição de obra.",
-    date: "12 Abr 2025",
-    readTime: "6 min",
-  },
-  {
-    slug: "primer-epoxi-vs-impermeabilizante-cimenticio",
-    category: "Impermeabilização",
-    title: "Primer epóxi vs. impermeabilizante cimentício: quando usar cada um",
-    excerpt: "A escolha errada entre as duas soluções pode comprometer toda a impermeabilização. Entenda as diferenças de aplicação, custo e durabilidade em cada cenário de obra.",
-    date: "05 Abr 2025",
-    readTime: "4 min",
-  },
-  {
-    slug: "fixacao-grama-sintetica-quadras",
-    category: "Grama Sintética",
-    title: "Fixação de grama sintética em quadras: guia completo para instaladores",
-    excerpt: "Da preparação do substrato à cura final — protocolo passo a passo para garantir aderência máxima da cola PU bicomponente em qualquer condição climática.",
-    date: "28 Mar 2025",
-    readTime: "8 min",
-  },
-  {
-    slug: "voc-zero-adesivos-pu",
-    category: "Técnico",
-    title: "VOC zero: por que isso importa na escolha de adesivos PU",
-    excerpt: "A emissão de compostos orgânicos voláteis afeta a saúde dos instaladores e a qualificação LEED de edificações. Saiba o que avaliar antes de especificar um adesivo.",
-    date: "18 Mar 2025",
-    readTime: "5 min",
-  },
-  {
-    slug: "resistencia-mecanica-adesivos-pu-bicomponente",
-    category: "Adesivos PU",
-    title: "Resistência mecânica em adesivos PU bicomponente: o que dizem os laudos",
-    excerpt: "Análise comparativa de testes de compressão, tração e cisalhamento entre formulações monocomponentes e bicomponentes. Dados reais de laboratório.",
-    date: "10 Mar 2025",
-    readTime: "7 min",
-  },
-  {
-    slug: "contrapiso-preparo-correto",
-    category: "Pisos de Madeira",
-    title: "Preparo de contrapiso: o passo mais negligenciado na instalação de pisos",
-    excerpt: "Umidade residual, planeza e resistência à compressão do substrato são determinantes para a durabilidade da colagem. Veja os parâmetros mínimos exigidos.",
-    date: "25 Fev 2025",
-    readTime: "5 min",
-  },
-  {
-    slug: "impermeabilizacao-decks-madeira",
-    category: "Impermeabilização",
-    title: "Impermeabilização de decks de madeira: proteção contra umidade e intempéries",
-    excerpt: "Decks expostos exigem sistemas de proteção específicos. Compare primers epóxi, vernizes impermeabilizantes e membranas elastoméricas para cada tipo de madeira.",
-    date: "14 Fev 2025",
-    readTime: "6 min",
-  },
-  {
-    slug: "cola-pu-temperatura-cura",
-    category: "Adesivos PU",
-    title: "Temperatura ambiente e tempo de cura: como a condição climática afeta a colagem",
-    excerpt: "Adesivos PU são sensíveis à temperatura e à umidade do ar. Veja as faixas ideais de aplicação e as consequências de ignorar esses parâmetros em obra.",
-    date: "03 Fev 2025",
-    readTime: "4 min",
-  },
-];
+import { CATEGORIES, CATEGORY_COLORS, CATEGORY_BG, posts } from "../data/blog";
 
 function ArrowRight() {
   return (
@@ -97,9 +13,26 @@ function ArrowRight() {
 }
 
 export default function BlogPage() {
-  const [active, setActive] = useState("Todos");
+  const [active, setActive] = useState("all");
+  const [search, setSearch] = useState("");
 
-  const visible = active === "Todos" ? posts : posts.filter((p) => p.category === active);
+  const q = search.trim().toLowerCase();
+
+  const visible = posts.filter((p) => {
+    if (active !== "all" && p.category !== active) return false;
+    if (q && !p.title.toLowerCase().includes(q) && !p.category.toLowerCase().includes(q)) return false;
+    return true;
+  });
+
+  function navBtn(isActive: boolean) {
+    return isActive
+      ? { background: "#007800", color: "#fff" }
+      : { color: "#4b5563" };
+  }
+
+  function navHover(isActive: boolean, el: HTMLButtonElement, enter: boolean) {
+    if (!isActive) el.style.background = enter ? "#f0fdf4" : "transparent";
+  }
 
   return (
     <main style={{ background: "#f4f5f0", minHeight: "100vh" }}>
@@ -128,48 +61,81 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* Sticky filter bar */}
-      <div
-        className="sticky top-16 z-30 border-b px-6 py-3"
-        style={{ background: "#f4f5f0", borderColor: "#e7ebe8" }}
-      >
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-2">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className="shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-150 whitespace-nowrap cursor-pointer active:scale-95"
-              style={
-                active === cat
-                  ? { background: "#007800", color: "#fff", boxShadow: "0 2px 8px rgba(0,120,0,0.25)" }
-                  : { background: "transparent", color: "#6b7280", border: "1px solid #d1d5db" }
-              }
-              onMouseEnter={(e) => {
-                if (active !== cat) {
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = "#007800";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#007800";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (active !== cat) {
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = "#d1d5db";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#6b7280";
-                }
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
+      <div className="max-w-7xl mx-auto px-6 py-10 pb-24 flex flex-col lg:flex-row gap-8 items-start">
 
-      {/* Articles grid */}
-      <div className="max-w-7xl mx-auto px-6 py-12 pb-24">
+        {/* ── SIDEBAR ── */}
+        <aside className="w-full lg:w-64 shrink-0 lg:sticky lg:top-24">
+
+          {/* Search */}
+          <div className="relative mb-6">
+            <span
+              className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+              style={{ color: "#9ca3af" }}
+            >
+              <SearchIcon />
+            </span>
+            <input
+              type="text"
+              placeholder="Buscar artigo..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className="w-full pl-9 pr-8 py-2.5 rounded-xl text-sm outline-none"
+              style={{ background: "#fff", border: "1px solid #e7ebe8", color: "#111827" }}
+            />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                aria-label="Limpar busca"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
+          {/* Category filter */}
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 px-1">Categoria</p>
+          <nav className="flex flex-col gap-1">
+            <button
+              onClick={() => setActive("all")}
+              className="w-full text-left px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+              style={navBtn(active === "all")}
+              onMouseEnter={e => navHover(active === "all", e.currentTarget as HTMLButtonElement, true)}
+              onMouseLeave={e => navHover(active === "all", e.currentTarget as HTMLButtonElement, false)}
+            >
+              Todas as categorias
+              <span className="float-right text-xs font-normal mt-0.5" style={{ opacity: 0.6 }}>
+                {posts.filter(p => !q || p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)).length}
+              </span>
+            </button>
+            {CATEGORIES.map((cat) => {
+              const count = posts.filter(
+                (p) => p.category === cat && (!q || p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q))
+              ).length;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className="w-full text-left px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                  style={navBtn(active === cat)}
+                  onMouseEnter={e => navHover(active === cat, e.currentTarget as HTMLButtonElement, true)}
+                  onMouseLeave={e => navHover(active === cat, e.currentTarget as HTMLButtonElement, false)}
+                >
+                  {cat}
+                  <span className="float-right text-xs font-normal mt-0.5" style={{ opacity: 0.6 }}>{count}</span>
+                </button>
+              );
+            })}
+          </nav>
+        </aside>
+
+        {/* ── CONTENT ── */}
+        <div className="flex-1 min-w-0">
         <p className="text-sm text-gray-400 mb-8">
-          {visible.length} {visible.length === 1 ? "artigo" : "artigos"}{active !== "Todos" ? ` em ${active}` : ""}
+          {visible.length} {visible.length === 1 ? "artigo" : "artigos"}{active !== "all" ? ` em ${active}` : ""}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {visible.map((post) => {
             const color = CATEGORY_COLORS[post.category] ?? "#007800";
             const bg = CATEGORY_BG[post.category] ?? CATEGORY_BG["Adesivos PU"];
@@ -260,9 +226,9 @@ export default function BlogPage() {
 
         {visible.length === 0 && (
           <div className="flex flex-col items-center justify-center py-24 text-center">
-            <p className="text-gray-400 text-sm">Nenhum artigo encontrado nesta categoria.</p>
+            <p className="text-gray-400 text-sm">Nenhum artigo encontrado.</p>
             <button
-              onClick={() => setActive("Todos")}
+              onClick={() => { setActive("all"); setSearch(""); }}
               className="mt-4 text-sm font-semibold transition-colors hover:text-green-800"
               style={{ color: "#007800" }}
             >
@@ -270,7 +236,16 @@ export default function BlogPage() {
             </button>
           </div>
         )}
+        </div>
       </div>
     </main>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
   );
 }

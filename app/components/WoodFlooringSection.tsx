@@ -9,7 +9,7 @@ export default function WoodFlooringSection() {
                 {/* Image */}
                 <div className="relative rounded-3xl overflow-hidden order-2 lg:order-1" style={{ height: 500 }}>
                     <Image
-                        src="/assets/produtos.webp"
+                        src="/assets/Banner_610x500px.png"
                         alt="Soluções para Pisos de Madeira"
                         fill
                         className="object-cover"
