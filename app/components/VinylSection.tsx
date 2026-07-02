@@ -13,7 +13,7 @@ export default function VinylSection() {
                     </p>
                     <h2 className="font-extrabold text-gray-900 leading-tight mb-6" style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}>
                         Soluções para{" "} <br></br>
-                        <span style={{ color: "#007800" }}>pisos de vinílico</span>
+                        <span style={{ color: "#007800" }}>pisos vinílico</span>
                     </h2>
                     <p className="text-gray-500 text-base leading-relaxed mb-4">
                         Para que o design de um piso vinílico seja valorizado por completo, a preparação que fica sob a superfície é decisiva. Alinhamento perfeito e réguas estáveis dependem diretamente de um contrapiso bem nivelado e de uma colagem contínua. É com esse foco que nasce a Linha para Vinílicos: um conjunto de 4 produtos complementares que cuidam de todo o processo, desde o tratamento inicial da base até o acabamento.
@@ -46,7 +46,7 @@ export default function VinylSection() {
                 <div className="relative rounded-3xl overflow-hidden order-2 aspect-[610/500] lg:aspect-auto lg:h-[500px]">
                     <Image
                         src="/assets/Banner_610x500px_Vinilico.png"
-                        alt="Soluções para Pisos de Vinílico"
+                        alt="Soluções para Pisos Vinílico"
                         fill
                         className="object-cover"
                     />

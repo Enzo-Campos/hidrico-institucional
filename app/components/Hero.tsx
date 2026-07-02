@@ -21,7 +21,7 @@ const lines = [
   },
   {
     id: "vinilicos",
-    tab: "Pisos de Vinílicos",
+    tab: "Pisos Vinílicos",
     tagline: "Linha para Vinílicos · Lançamento",
     headline: "FabVinil 501",
     image: "/assets/Cópia de BALDE 5kg.png",
