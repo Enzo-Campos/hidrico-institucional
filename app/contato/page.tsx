@@ -49,10 +49,10 @@ function InstagramIcon() {
     );
 }
 
-function FacebookIcon() {
+function LinkedInIcon() {
     return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zM8.5 8h3.83v2.05h.05c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.63c0-1.58-.03-3.62-2.2-3.62-2.2 0-2.54 1.72-2.54 3.5V23h-4V8z" />
         </svg>
     );
 }
@@ -236,7 +236,7 @@ export default function ContatoPage() {
                             <div className="flex flex-wrap gap-3">
                                 {[
                                     { href: "https://www.instagram.com/hidricoquimica", icon: <InstagramIcon />, label: "Instagram" },
-                                    { href: "https://www.facebook.com/hidricoquimica", icon: <FacebookIcon />, label: "Facebook" },
+                                    { href: "https://www.linkedin.com/company/h%C3%ADdrico-qu%C3%ADmica/?viewAsMember=true", icon: <LinkedInIcon />, label: "LinkedIn" },
                                     { href: "https://wa.me/554137982010", icon: <WhatsAppIcon />, label: "WhatsApp" },
                                 ].map(s => (
                                     <a

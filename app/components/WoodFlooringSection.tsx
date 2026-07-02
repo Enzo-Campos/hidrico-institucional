@@ -7,7 +7,7 @@ export default function WoodFlooringSection() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 {/* Image */}
-                <div className="relative rounded-3xl overflow-hidden order-2 lg:order-1" style={{ height: 500 }}>
+                <div className="relative rounded-3xl overflow-hidden order-2 lg:order-1 aspect-[610/500] lg:aspect-auto lg:h-[500px]">
                     <Image
                         src="/assets/Banner_610x500px.png"
                         alt="Soluções para Pisos de Madeira"

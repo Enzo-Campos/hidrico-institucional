@@ -46,10 +46,7 @@ export default function ProductCards() {
             }}
           >
             {/* Product image area */}
-            <div
-              className="relative overflow-hidden"
-              style={{ height: 280 }}
-            >
+            <div className="relative overflow-hidden aspect-[628/280] md:aspect-auto md:h-[280px]">
               <Image
                 src={p.banner}
                 alt={p.title}

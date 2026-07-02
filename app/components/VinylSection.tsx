@@ -43,7 +43,7 @@ export default function VinylSection() {
                 </div>
 
                 {/* Image */}
-                <div className="relative rounded-3xl overflow-hidden order-2" style={{ height: 500 }}>
+                <div className="relative rounded-3xl overflow-hidden order-2 aspect-[610/500] lg:aspect-auto lg:h-[500px]">
                     <Image
                         src="/assets/Banner_610x500px_Vinilico.png"
                         alt="Soluções para Pisos de Vinílico"

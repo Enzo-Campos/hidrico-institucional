@@ -54,10 +54,10 @@ export default function BlogPage() {
             className="font-black text-gray-900 mb-4 leading-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
-            Artigos Técnicos
+            Blog
           </h1>
           <p className="text-gray-500 text-base leading-relaxed" style={{ maxWidth: 540 }}>
-            Guias, análises e especificações técnicas sobre adesivos industriais, impermeabilização e preparação de superfícies para a construção civil.
+            Dicas práticas de aplicação e histórias de obras reais em que a Hídrico Química esteve presente, entregando desempenho e confiabilidade do início ao fim do projeto.
           </p>
         </div>
       </div>

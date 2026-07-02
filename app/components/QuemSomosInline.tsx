@@ -19,7 +19,7 @@ export default function QuemSomosInline() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
 
         {/* Video */}
-        <div className="shrink-0 w-full max-w-[300px] mx-auto lg:mx-0">
+        <div className="shrink-0 w-full max-w-[300px] mx-auto lg:mx-0 order-2 lg:order-1">
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{ border: "1px solid #e7ebe8", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}
@@ -51,7 +51,7 @@ export default function QuemSomosInline() {
         </div>
 
         {/* Text */}
-        <div className="flex-1">
+        <div className="flex-1 order-1 lg:order-2">
           <Breadcrumb
             className="mb-4"
             variant="light"
