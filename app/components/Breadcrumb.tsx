@@ -7,15 +7,18 @@ export interface Crumb {
 
 interface Props {
   crumbs: Crumb[];
-  variant?: "dark" | "light";
+  variant?: "dark" | "light" | "photo";
   className?: string;
 }
 
 export default function Breadcrumb({ crumbs, variant = "dark", className = "" }: Props) {
-  const linkColor   = variant === "dark" ? "#6b7280" : "#9ca3af";
-  const hoverClass  = variant === "dark" ? "hover:text-white" : "hover:text-gray-700";
+  const linkColor =
+    variant === "photo" ? "#ffffff" : variant === "dark" ? "#6b7280" : "#9ca3af";
+  const hoverClass =
+    variant === "photo" ? "hover:text-white/80" : variant === "dark" ? "hover:text-white" : "hover:text-gray-700";
   const activeColor = "#22c55e";
-  const sepColor    = variant === "dark" ? "#374151" : "#d1d5db";
+  const sepColor =
+    variant === "photo" ? "rgba(255,255,255,0.5)" : variant === "dark" ? "#374151" : "#d1d5db";
 
   return (
     <nav

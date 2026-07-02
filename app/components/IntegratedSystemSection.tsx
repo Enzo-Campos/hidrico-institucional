@@ -30,7 +30,7 @@ export default function IntegratedSystemSection() {
           background: "radial-gradient(ellipse at top, rgba(34,197,94,0.14) 0%, transparent 60%)",
         }}
       />
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="text-xs font-bold uppercase tracking-[0.3em] mb-4" style={{ color: "#22c55e" }}>
             TECNOLOGIA INTEGRADA

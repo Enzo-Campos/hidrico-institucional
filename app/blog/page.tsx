@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { CATEGORIES, CATEGORY_COLORS, CATEGORY_BG, posts } from "../data/blog";
+import { CATEGORIES, CATEGORY_BG, posts } from "../data/blog";
 
 function ArrowRight() {
   return (
@@ -137,8 +138,7 @@ export default function BlogPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {visible.map((post) => {
-            const color = CATEGORY_COLORS[post.category] ?? "#007800";
-            const bg = CATEGORY_BG[post.category] ?? CATEGORY_BG["Adesivos PU"];
+            const bg = CATEGORY_BG[post.category] ?? CATEGORY_BG["Dicas"];
             return (
               <Link
                 key={post.slug}
@@ -146,30 +146,46 @@ export default function BlogPage() {
                 className="bg-white rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
                 style={{ border: "1px solid #e7ebe8" }}
               >
-                {/* Thumbnail — colored gradient block */}
+                {/* Thumbnail — cover image or colored gradient fallback */}
                 <div
                   className="relative overflow-hidden"
                   style={{ height: 140, background: bg }}
                 >
-                  {/* Subtle dot texture */}
+                  {post.cover ? (
+                    <Image
+                      src={post.cover}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <>
+                      {/* Subtle dot texture */}
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
+                          backgroundSize: "20px 20px",
+                        }}
+                      />
+                      {/* Diagonal highlight */}
+                      <div
+                        className="absolute"
+                        style={{
+                          top: "-40%",
+                          right: "-10%",
+                          width: "60%",
+                          height: "180%",
+                          background: "rgba(255,255,255,0.05)",
+                          transform: "rotate(-25deg)",
+                        }}
+                      />
+                    </>
+                  )}
+                  {/* Bottom fade for badge legibility */}
                   <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
-                  {/* Diagonal highlight */}
-                  <div
-                    className="absolute"
-                    style={{
-                      top: "-40%",
-                      right: "-10%",
-                      width: "60%",
-                      height: "180%",
-                      background: "rgba(255,255,255,0.05)",
-                      transform: "rotate(-25deg)",
-                    }}
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)" }}
                   />
                   {/* Category label in thumbnail */}
                   <div className="absolute bottom-4 left-5">
@@ -213,7 +229,7 @@ export default function BlogPage() {
                     <span className="text-xs text-gray-400">{post.date}</span>
                     <span
                       className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all group-hover:gap-2.5"
-                      style={{ color }}
+                      style={{ color: "#007800" }}
                     >
                       Ler artigo <ArrowRight />
                     </span>

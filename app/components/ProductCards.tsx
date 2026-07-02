@@ -25,7 +25,15 @@ const products = [
 
 export default function ProductCards() {
   return (
-    <section id="produtos" className="py-6 px-6 pb-24" style={{ background: "#f4f5f0" }}>
+    <section id="produtos" className="pt-20 pb-24 px-6" style={{ background: "#f4f5f0" }}>
+      <div className="max-w-7xl mx-auto mb-10">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#007800" }}>
+          Mais Soluções
+        </p>
+        <h2 className="font-extrabold text-gray-900 leading-tight" style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}>
+          Confira outras linhas:
+        </h2>
+      </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
         {products.map((p) => (
           <div

@@ -20,6 +20,19 @@ const lines = [
     ],
   },
   {
+    id: "vinilicos",
+    tab: "Pisos de Vinílicos",
+    tagline: "Linha para Vinílicos · Lançamento",
+    headline: "FabVinil 501",
+    image: "/assets/Cópia de BALDE 5kg.png",
+    href: "/produtos/fabvinil-501",
+    specs: [
+      { label: "Consumo", value: "0,3 kg/m²", top: "1rem", left: "1rem", right: "auto", bottom: "auto" },
+      { label: "Tempo aberto", value: "10-15 min", top: "1rem", right: "1rem", left: "auto", bottom: "auto" },
+      { label: "Secagem total", value: "48-72 h", bottom: "5rem", left: "1rem", top: "auto", right: "auto" },
+    ],
+  },
+  {
     id: "grama",
     tab: "Grama Sintética",
     tagline: "FabCol · Linha Grama",
@@ -48,7 +61,7 @@ const lines = [
 ];
 
 const MARQUEE =
-  "FabCol PU  ·  Fusion XT  ·  FabCol 606  ·  FabCol 604  ·  FabFlex Safe Deck  ·  FabFlex 700  ·  FabFix 500  ·  MS H410  ·  FabMell P51  ·  FabCol Grama  ·  Primer Epóxi  ·  ";
+  "FabCol PU  ·  Fusion XT  ·  FabCol 606  ·  FabCol 604  ·  FabFlex Safe Deck  ·  FabFlex 700  ·  FabFix 500  ·  MS H410  ·  FabMell P51  ·  FabCol Grama  ·  Primer Epóxi  ·  FabVinil 501  ·  ";
 
 export default function Hero() {
   const [active, setActive] = useState(0);

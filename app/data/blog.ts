@@ -12,29 +12,31 @@ export interface BlogPost {
   excerpt: string;
   date: string;
   readTime: string;
+  cover?: string;
   content?: BlogSection[];
 }
 
-export const CATEGORIES = ["Pisos de Madeira", "Técnico"];
+export const CATEGORIES = ["Projetos", "Dicas"];
 
 export const CATEGORY_COLORS: Record<string, string> = {
-  "Pisos de Madeira": "#92400e",
-  "Técnico":           "#374151",
+  "Projetos": "#92400e",
+  "Dicas":    "#374151",
 };
 
 export const CATEGORY_BG: Record<string, string> = {
-  "Pisos de Madeira": "linear-gradient(135deg, #78350f 0%, #92400e 100%)",
-  "Técnico":           "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
+  "Projetos": "linear-gradient(135deg, #78350f 0%, #92400e 100%)",
+  "Dicas":    "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
 };
 
 export const posts: BlogPost[] = [
   {
     slug: "como-escolher-solucao-certa-para-cada-etapa-da-obra",
-    category: "Técnico",
+    category: "Dicas",
     title: "Como escolher a solução certa para cada etapa da obra",
     excerpt: "Da preparação da base à proteção contra umidade, da colagem dos materiais ao acabamento, a Hídrico Química desenvolve soluções para ajudar profissionais a escolher os produtos certos, com mais segurança, desempenho e durabilidade.",
     date: "02 Jul 2026",
     readTime: "7 min",
+    cover: "/assets/CAPA BLOG/hidrico_capa-de-blog_solucao-certa.webp",
     content: [
       {
         text: "Em muitos projetos, a atenção costuma estar concentrada no acabamento. Afinal, é ele que aparece primeiro quando o resultado é entregue. Mas, na prática, a qualidade do resultado começa muito antes.",
@@ -119,11 +121,12 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "restauracao-salao-nobre-palacio-iguacu",
-    category: "Pisos de Madeira",
+    category: "Projetos",
     title: "Salão Nobre do Palácio Iguaçu: uma restauração que começa nos detalhes",
     excerpt: "Quando um patrimônio histórico precisa ser restaurado, cada escolha ganha um peso diferente. Descubra como as soluções técnicas adotadas foram fundamentais para a revitalização do Salão Nobre do Palácio Iguaçu.",
     date: "02 Jul 2026",
     readTime: "5 min",
+    cover: "/assets/CAPA BLOG/hidrico_capa-de-blog_palacio.webp",
     content: [
       {
         text: "Sede oficial do governo do Paraná, o Palácio Iguaçu abriga um dos espaços mais emblemáticos do estado. Em sua revitalização, a seleção dos materiais e dos sistemas de aplicação teve papel importante para conciliar preservação, desempenho e durabilidade. Foi nesse contexto que a Hídrico Química contribuiu com soluções técnicas para a obra.",
@@ -169,11 +172,12 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "instalacao-sem-retrabalho-erros-comuns",
-    category: "Técnico",
+    category: "Dicas",
     title: "Instalação sem retrabalho: erros que você precisa evitar",
     excerpt: "Falhas na preparação da base, na escolha dos produtos ou na aplicação podem comprometer o desempenho da instalação e gerar custos extras. Entenda os pontos críticos que merecem atenção para garantir um resultado mais eficiente.",
     date: "02 Jul 2026",
     readTime: "6 min",
+    cover: "/assets/CAPA BLOG/hidrico_capa-de-blog_sem-retrabalho.webp",
     content: [
       {
         text: "Em uma obra, uma instalação bem-executada é decisiva para garantir segurança e durabilidade. Mas nem sempre os problemas aparecem no momento da aplicação. Muitas falhas só se tornam visíveis depois, quando o sistema começa a apresentar sinais de instabilidade, perda de aderência, descolamento, umidade ou necessidade de correção.",

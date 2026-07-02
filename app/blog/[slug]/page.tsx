@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPost, posts, CATEGORY_COLORS, CATEGORY_BG } from "../../data/blog";
@@ -39,16 +40,27 @@ export default async function BlogPostPage({
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden pt-32 pb-16 px-6" style={{ background: bg }}>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        />
+        {post.cover ? (
+          <>
+            <Image src={post.cover} alt={post.title} fill className="object-cover" priority />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 100%)" }}
+            />
+          </>
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
+              backgroundSize: "20px 20px",
+            }}
+          />
+        )}
         <div className="relative max-w-3xl mx-auto">
           <Breadcrumb
             className="mb-8"
+            variant="photo"
             crumbs={[
               { label: "Início", href: "/" },
               { label: "Blog", href: "/blog" },
