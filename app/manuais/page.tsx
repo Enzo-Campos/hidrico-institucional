@@ -30,7 +30,7 @@ const allProducts: ProductEntry[] = [
   {
     id: "fusion-xt", category: "pisos",
     product: "FabCol FUSION XT", tag: "Lançamento 2026", slug: "fabcol-fusion-xt",
-    boletim: { file: "/assets/BOLETINS/FABCOL FUSION XT/FABCOL®️ FUSION XT · Boletim Técnico · Rev-0326.pdf", rev: "Mar/26" },
+    boletim: { file: "/assets/BOLETINS/FABCOL FUSION XT/FUSION XT Boletim Tecnico.pdf", rev: "Mar/26" },
     fds: [
       { label: "Comp. A", file: "/assets/FDS/Fusion X/Cópia de FABCOL FUSION X (COMPONENTE A) - FDS - 0010.pdf" },
       { label: "Comp. B", file: "/assets/FDS/Fusion X/Cópia de FABCOL FUSION X (COMPONENTE  B) - FDS - 0011.docxREVISAO.pdf" },
