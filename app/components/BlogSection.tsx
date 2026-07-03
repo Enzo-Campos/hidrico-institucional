@@ -4,7 +4,7 @@ const posts = [
   {
     id: "01",
     slug: "como-escolher-adesivo-piso-madeira",
-    category: "Pisos de Madeira",
+    category: "Pisos e Revestimentos de Madeira",
     title: "Como escolher o adesivo certo para cada tipo de piso de madeira",
     excerpt:
       "Tábuas maciças, engenheiradas e tacos exigem formulações distintas. Entenda os critérios técnicos que definem a escolha do adesivo PU ideal para cada substrato.",

@@ -212,8 +212,8 @@ export default function ContatoPage() {
                         </InfoCard>
 
                         <InfoCard icon={<PhoneIcon />} label="Telefone Fixo">
-                            <a href="tel:4137972170" className="text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors">
-                                (41) 3797-2170
+                            <a href="tel:+554137982010" className="text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors">
+                                (41) 3798-2010
                             </a>
                         </InfoCard>
 

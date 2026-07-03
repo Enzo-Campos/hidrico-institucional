@@ -28,7 +28,7 @@ export const products: Product[] = [
     title: "FabCol PU 606",
     tag: "Alto Desempenho",
     tagColor: "#007800",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/b2143404f2019a7f475eeaace8e76131-4.png`,
     fichaTecnica: "/assets/fabcol-pu-606-boletim-tecnico-rev0523.pdf",
     description:
@@ -67,7 +67,7 @@ export const products: Product[] = [
     title: "FabCol Fusion XT",
     tag: "Lançamento 2026",
     tagColor: "#d97706",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/1d75df36011faa86215a5b9753553542-15.png`,
     fichaTecnica: "/assets/BOLETINS/FABCOL FUSION XT/FUSION XT Boletim Tecnico.pdf",
     description:
@@ -179,7 +179,7 @@ export const products: Product[] = [
     title: "FabCol PU PP",
     tag: "Piso sobre Piso",
     tagColor: "#007800",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/ed5f023e7121f0d2c2dab31402e2edc2-5.png`,
     fichaTecnica: "/assets/fabcol-pu-pp-boletim-tecnico-rev0523.pdf",
     description:
@@ -219,7 +219,7 @@ export const products: Product[] = [
     title: "FabCol PU 780 SV",
     tag: "Fixação Vertical",
     tagColor: "#007800",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/ef671627207b666f02def555305046ba-6.png`,
     fichaTecnica: "/assets/fabcol-pu-780-sv-boletim-tecnico--rev0523.pdf",
     description:
@@ -260,8 +260,9 @@ export const products: Product[] = [
     title: "FabCol MS H410",
     tag: "LANÇAMENTO 2026",
     tagColor: "#007800",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/d1b51e7d527ab98de07290b7b187848d-16.png`,
+    fichaTecnica: "/assets/BOLETINS/MS H410/ITR - MS H410.pdf",
     description:
       "Selante adesivo monocomponente à base de polímero MS para pisos de madeira. Pronto para uso, elástico, sem solventes, sem isocianatos e sem odor.",
     specs: [
@@ -415,7 +416,7 @@ export const products: Product[] = [
     title: "FabCol PU 604",
     tag: "Alta Resistência",
     tagColor: "#007800",
-    category: "Colagem de Pisos de Madeira",
+    category: "Colagem de Pisos e Revestimentos de Madeira",
     image: `${BASE}/5db05631849acb911bd0f8edba01a39d-3.png`,
     fichaTecnica: "/assets/fabcol-pu-604-boletim-tecnico-rev0523.pdf",
     description:

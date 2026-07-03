@@ -8,7 +8,7 @@ const BASE = "/assets/produtos";
 const lines = [
   {
     id: "pisos",
-    tab: "Pisos de Madeira",
+    tab: "Pisos e Revestimentos de Madeira",
     tagline: "FabCol · PU Bicomponente",
     headline: "Fusion XT",
     image: `${BASE}/1d75df36011faa86215a5b9753553542-15.png`,

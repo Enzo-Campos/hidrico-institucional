@@ -73,7 +73,7 @@ export default function Navbar() {
           }
         >
           <PhoneIcon />
-          (41) 3797-2170
+          (41) 3798-2010
         </a>
 
         {/* Mobile hamburger */}
@@ -120,7 +120,7 @@ export default function Navbar() {
             style={{ background: "#007800", color: "#ffffff" }}
           >
             <PhoneIcon />
-            (41) 3797-2170
+            (41) 3798-2010
           </a>
         </div>
       )}

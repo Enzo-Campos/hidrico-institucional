@@ -17,7 +17,7 @@ interface ProductEntry {
 
 /* ── Categories ──────────────────────────────────────── */
 const categories = [
-  { id: "pisos",     label: "Colagem de Pisos de Madeira" },
+  { id: "pisos",     label: "Colagem de Pisos e Revestimentos de Madeira" },
   { id: "grama",     label: "Cola para Grama Sintética" },
   { id: "imperme",   label: "Impermeabilizantes" },
   { id: "aditivos",  label: "Aditivos para Contra Pisos" },
@@ -76,6 +76,7 @@ const allProducts: ProductEntry[] = [
   {
     id: "ms-h410", category: "pisos",
     product: "FabCol MS H410", tag: "MS Polímero", slug: "fabcol-ms-h410",
+    boletim: { file: "/assets/BOLETINS/MS H410/ITR - MS H410.pdf" },
     fds: [{ label: "FDS", file: "/assets/FDS/FDS MS H410/MS H410.pdf" }],
   },
 // ── Grama Sintética ──

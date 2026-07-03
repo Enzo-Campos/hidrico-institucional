@@ -163,11 +163,11 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center gap-2.5">
                             <span style={{ color: "#31b144" }}><PhoneIcon /></span>
-                            <a href="tel:4137972170" className="text-sm transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}
+                            <a href="tel:+554137982010" className="text-sm transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}
                                 onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = "#ffffff")}
                                 onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)")}
                             >
-                                (41) 3797-2170
+                                (41) 3798-2010
                             </a>
                         </li>
                         <li className="flex items-center gap-2.5">

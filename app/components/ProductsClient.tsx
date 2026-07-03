@@ -9,7 +9,7 @@ import { products } from "../data/products";
 const categories = [
   {
     id: "colagem-pisos-madeira",
-    name: "Colagem de Pisos de Madeira",
+    name: "Colagem de Pisos e Revestimentos de Madeira",
     description:
       "Linha completa de adesivos poliuretânicos para colagem de tábuas, tacos e pisos engenheirados.",
   },
