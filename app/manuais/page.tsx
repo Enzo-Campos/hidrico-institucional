@@ -95,23 +95,23 @@ const allProducts: ProductEntry[] = [
     product: "FabFlex Impermeabilizante de Contrapiso Primer Epóxi", tag: "Primer Epóxi", slug: "fabflex-impermeabilizante-de-contrapiso-primer-epoxi",
     boletim: { file: "/assets/BOLETINS/Primer epóxi/Cópia de FABFLEX®️ PRIMER EPÓXI · Boletim Técnico · Rev-12-24.pdf", rev: "Dez/24" },
     fds: [
-      { label: "Comp. A", file: "/assets/FDS/Fabflex Primer Epóxi/Cópia de FABFLEX PRIMER EPÓXI (COMPONENTE A) - FDS - 0016.pdf" },
-      { label: "Comp. B", file: "/assets/FDS/Fabflex Primer Epóxi/Cópia de FABFLEX PRIMER EPÓXI (COMPONENTE B) - FDS - 0017.docxREVISAO.pdf" },
+      { label: "Comp. A", file: "/assets/FDS/Fabflex Primer Epóxi/FDS_Hidrico_Quimica_FabFlex_Primer_Epox_Componente_A.pdf" },
+      { label: "Comp. B", file: "/assets/FDS/Fabflex Primer Epóxi/FDS_Hidrico_Quimica_FabFlex_Primer_Epox_Componente_B.pdf" },
     ],
   },
   {
     id: "safe-deck", category: "imperme",
     product: "FabFlex Impermeabilizante para Madeira Safe Deck", tag: "Proteção para Madeira", slug: "fabflex-impermeabilizante-para-madeira-safe-deck",
     boletim: { file: "/assets/BOLETINS/Safe Deck/Cópia de FABFLEX®️ SAFE DECK · Boletim Técnico · Rev-05-2024.pdf", rev: "Mai/24" },
-    fds: [{ label: "FDS", file: "/assets/FDS/Safe Deck/Cópia de FABFLEX SAFE DECK - FDS - 0020.pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/Safe Deck/FDS_Hidrico_Quimica_FabFlex_Safe_Deck.pdf" }],
   },
   {
     id: "fabflex-700", category: "imperme",
     product: "FabFlex Impermeabilizante de Contrapiso", tag: "Contrapiso", slug: "fabflex-impermeabilizante-de-contrapiso",
     boletim: { file: "/assets/BOLETINS/Fabflex/Cópia de FABFLEX®️ 700 · Boletim Técnico.pdf" },
     fds: [
-      { label: "Comp. A", file: "/assets/FDS/Fabflex/Cópia de FABFLEX 700 (COMPONENTE A) - FDS - 0014.pdf" },
-      { label: "Comp. B", file: "/assets/FDS/Fabflex/Cópia de FABFLEX 700 (COMPONENTE B) - FDS - 0015.docxREVISAO.pdf" },
+      { label: "Comp. A", file: "/assets/FDS/Fabflex/FDS_Hidrico_Quimica_FabFlex_700_Componente A.pdf" },
+      { label: "Comp. B", file: "/assets/FDS/Fabflex/FDS_Hidrico_Quimica_FabFlex_700_Componente B.pdf" },
     ],
   },
   // ── Aditivos ──
