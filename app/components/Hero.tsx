@@ -24,11 +24,11 @@ const lines = [
     tab: "Pisos Vinílicos",
     tagline: "Linha para Vinílicos · Lançamento",
     headline: "FabVinil 501",
-    image: "/assets/Cópia de BALDE 5kg.png",
+    image: "/assets/produtos/Fab%20vinil%201.webp",
     href: "/produtos/fabvinil-501",
     specs: [
       { label: "Consumo", value: "0,3 kg/m²", top: "1rem", left: "1rem", right: "auto", bottom: "auto" },
-      { label: "Tempo aberto", value: "10-15 min", top: "1rem", right: "1rem", left: "auto", bottom: "auto" },
+      { label: "Tempo aberto", value: "5-25 min", top: "1rem", right: "1rem", left: "auto", bottom: "auto" },
       { label: "Secagem total", value: "48-72 h", bottom: "5rem", left: "1rem", top: "auto", right: "auto" },
     ],
   },

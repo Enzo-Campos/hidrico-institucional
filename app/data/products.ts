@@ -686,7 +686,7 @@ export const products: Product[] = [
       { label: "Tipo", value: "Adesivo acrílico monocomponente com cargas minerais inertes e aditivos" },
       { label: "Aplicação", value: "Desempenadeira dentada A1" },
       { label: "Consumo", value: "0,300 kg/m²" },
-      { label: "Tempo em Aberto", value: "Máximo de 10 a 15 minutos" },
+      { label: "Tempo em Aberto", value: "Máximo de 5 a 25 minutos" },
       { label: "Secagem", value: "48 a 72 h para cura total" },
     ],
     features: [
