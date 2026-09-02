@@ -30,6 +30,88 @@ export const CATEGORY_BG: Record<string, string> = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "impacto-do-contrapiso-no-desempenho-do-piso",
+    category: "Dicas",
+    title: "O impacto do contrapiso no desempenho do piso",
+    excerpt:
+      "Muitos problemas em pisos não surgem por causa do revestimento, mas das condições do contrapiso. Embora fique escondida após a instalação, essa camada é fundamental para garantir estabilidade, aderência e durabilidade ao sistema.",
+    date: "02 Set 2026",
+    readTime: "6 min",
+    cover: "/assets/CAPA BLOG/fabflex e fabfix.webp",
+    content: [
+      {
+        text: "Muitos problemas em pisos não surgem por causa do revestimento, mas das condições do contrapiso. Embora fique escondida após a instalação, essa camada é fundamental para garantir estabilidade, aderência e durabilidade ao sistema. Continue a leitura e entenda como uma preparação adequada contribui para um resultado mais eficiente.",
+      },
+      {
+        heading: "O papel do contrapiso no resultado",
+        text: "O contrapiso regulariza a superfície, corrige desníveis e cria as condições necessárias para a instalação do revestimento. Quando apresenta fissuras, baixa resistência ou excesso de umidade, compromete a aderência e aumenta o risco de falhas ao longo do tempo.",
+      },
+      {
+        heading: "Problemas que podem surgir quando a base não está preparada",
+        text: "Grande parte das patologias observadas em pisos está relacionada às condições da base. Entre os problemas mais comuns estão: perda de aderência entre contrapiso e revestimento, descolamento de peças, aparecimento de fissuras, bolhas provocadas pela umidade, desgaste precoce e necessidade de manutenção antes do esperado.",
+      },
+      {
+        text: "Além de gerar custos extras e atrasos na obra, esses problemas costumam ter origem em falhas na preparação do contrapiso. Por isso, investir nessa etapa é uma forma de prevenir retrabalhos e aumentar a durabilidade da instalação.",
+      },
+      {
+        heading: "Mais resistência com o FabFix",
+        text: "Durante a execução, o uso de aditivos específicos contribui para melhorar a resistência e a uniformidade do contrapiso. O FabFix foi desenvolvido para essa finalidade, favorecendo uma base mais resistente, melhor aderência ao revestimento e maior consistência na aplicação.",
+      },
+      {
+        heading: "O controle da umidade faz toda a diferença",
+        text: "Mesmo um contrapiso resistente pode apresentar problemas quando não recebe proteção contra a umidade ascendente. O FabFlex 700 atua nessa etapa, contribuindo para impermeabilizar o contrapiso antes da instalação do revestimento e reduzir riscos como bolhas, desplacamentos e perda de aderência.",
+      },
+      {
+        text: "Essa etapa preventiva minimiza riscos futuros e aumenta a confiabilidade do processo.",
+      },
+      {
+        heading: "Preparação adequada melhora a aderência",
+        text: "A preparação do contrapiso também influencia a aderência entre as camadas. O FabFlex Primer Epóxi auxilia nessa etapa ao bloquear a umidade, oferecer alta resistência química e proporcionar excelente aderência em diferentes substratos.",
+      },
+      {
+        text: "Com isso, cria uma base mais segura e adequada para receber o sistema, aumentando a estabilidade do conjunto.",
+      },
+      {
+        heading: "A análise do contrapiso reduz riscos futuros",
+        text: "Antes de iniciar qualquer aplicação, é fundamental analisar as condições do contrapiso e identificar possíveis necessidades de correção. Aspectos como nível de umidade, resistência mecânica, limpeza e regularidade da superfície devem ser considerados para garantir que o revestimento seja instalado em condições adequadas.",
+      },
+      {
+        text: "Essa avaliação permite escolher as soluções mais indicadas para cada situação, evitando que pequenos problemas na preparação comprometam etapas posteriores da obra. Um planejamento cuidadoso nessa fase contribui para maior segurança durante a aplicação e ajuda a alcançar resultados mais consistentes.",
+      },
+      {
+        heading: "Um bom resultado começa antes da instalação",
+        text: "Um contrapiso bem executado é o ponto de partida para uma instalação mais segura e durável. Quando é preparado corretamente, reduzem-se as chances de falhas, retrabalhos e manutenções precoces.",
+      },
+      {
+        text: "Soluções como o FabFix, o FabFlex Primer Epóxi e o FabFlex 700 auxiliam diferentes etapas desse processo, contribuindo para uma preparação técnica mais completa e maior segurança durante a instalação.",
+      },
+      {
+        text: "Quando cada fase da obra recebe a atenção necessária, o resultado aparece não apenas na qualidade, mas também na durabilidade e no desempenho do piso ao longo dos anos. Por isso, considerar o contrapiso como uma etapa estratégica da obra é fundamental para garantir mais segurança, eficiência e qualidade em todo o processo de instalação.",
+      },
+      {
+        text: "Conheça as soluções da Hídrico Química e descubra como preparar sua obra com mais eficiência. Aqui no blog, você pode conferir outros conteúdos sobre aplicação, preparação e soluções técnicas para auxiliar suas decisões em diferentes etapas do projeto.",
+      },
+      {
+        heading: "Saiba mais",
+        text: "Confira outros conteúdos que podem apoiar suas decisões em diferentes etapas do projeto:",
+        links: [
+          {
+            label: "Como escolher a solução certa para cada etapa da obra",
+            href: "/blog/como-escolher-solucao-certa-para-cada-etapa-da-obra",
+          },
+          {
+            label: "Salão Nobre do Palácio Iguaçu: uma restauração que começa nos detalhes",
+            href: "/blog/restauracao-salao-nobre-palacio-iguacu",
+          },
+          {
+            label: "Instalação sem retrabalho: erros que você precisa evitar",
+            href: "/blog/instalacao-sem-retrabalho-erros-comuns",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "como-escolher-solucao-certa-para-cada-etapa-da-obra",
     category: "Dicas",
     title: "Como escolher a solução certa para cada etapa da obra",
