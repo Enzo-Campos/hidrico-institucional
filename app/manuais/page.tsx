@@ -21,6 +21,7 @@ const categories = [
   { id: "grama",     label: "Cola para Grama Sintética" },
   { id: "imperme",   label: "Impermeabilizantes" },
   { id: "aditivos",  label: "Aditivos para Contra Pisos" },
+  { id: "autonivelante", label: "Autonivelante para Contrapiso" },
   { id: "vinilicos", label: "Linha para Vinílicos" },
   { id: "outros",    label: "Outros Produtos" },
 ];
@@ -119,7 +120,7 @@ const allProducts: ProductEntry[] = [
     id: "fabfix", category: "aditivos",
     product: "FabFix Aditivo para Contrapiso Cimentício", tag: "Aditivo Cimentício", slug: "fabfix-aditivo-para-contrapiso-cimenticio",
     boletim: { file: "/assets/fabfix-500-boletim-tecnico-rev0523.pdf", rev: "Mai/23" },
-    fds: [{ label: "FDS", file: "/assets/FDS/Fabfix/Cópia de FABFIX 500 - FDS - 0018.pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/Fabfix/FDS_Hidrico_Quimica_FabFix500_.pdf" }],
   },
   // ── Outros ──
   {
@@ -138,7 +139,17 @@ const allProducts: ProductEntry[] = [
     id: "fabmell", category: "outros",
     product: "FabMell Massa Acrílica para Madeira P51", tag: "Massa Acrílica", slug: "fabmell-massa-acrilica-para-madeira-p51",
     boletim: { file: "/assets/BOLETINS/FabMell/Cópia de FABMELL· Boletim Técnico.pdf" },
-    fds: [{ label: "FDS", file: "/assets/FDS/FabMell/Cópia de FABMELL MASSA FIXA P51 - FDS - 0019.pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/FabMell/FDS_Hidrico_Quimica_FabMell_Massa_Fixa_P51.pdf" }],
+  },
+  {
+    id: "fab-plan-h10", category: "autonivelante",
+    product: "FabPlan H10", tag: "Nivelamento de base", slug: "fab-plan-h10",
+    fds: [{ label: "FDS", file: "/assets/FDS/FAB PLAN H10/FDS_Hidrico_Quimica_Autonivelante_FAB_PLAN_H10.pdf" }],
+  },
+  {
+    id: "fab-plan-h50", category: "autonivelante",
+    product: "FabPlan H50", tag: "Regularização de superfícies", slug: "fab-plan-h50",
+    fds: [{ label: "FDS", file: "/assets/FDS/FAB PLAN H50/FDS_Hidrico_Quimica_Autonivelante_FAB_PLAN_H50.pdf" }],
   },
   // ── Linha para Vinílicos ──
   {

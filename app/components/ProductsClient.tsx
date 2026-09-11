@@ -20,6 +20,12 @@ const categories = [
       "Aditivos especiais para preparo e nivelamento de contrapisos cimentícios com alta performance.",
   },
   {
+    id: "autonivelante-contrapiso",
+    name: "Autonivelante para Contrapiso",
+    description:
+      "Argamassas autonivelantes cimentícias para regularização de contrapisos antes da instalação do revestimento final.",
+  },
+  {
     id: "calafetos",
     name: "Calafetos",
     description:
