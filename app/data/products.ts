@@ -330,7 +330,7 @@ export const products: Product[] = [
     surfaces: ["Concreto", "Argamassa", "Madeira", "Pedra", "Cerâmica", "Metais"],
     related: [
       { title: "FabFlex 700", tag: "Contrapiso", img: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, slug: "fabflex-impermeabilizante-de-contrapiso" },
-      { title: "FabFlex Safe Deck", tag: "Proteção para Madeira", img: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, slug: "fabflex-impermeabilizante-para-madeira-safe-deck" },
+      { title: "FabFlex 3000", tag: "Flexibilidade elevada", img: `${BASE}/Fab Flex 3000.webp`, slug: "fabflex-3000-impermeabilizante-flexivel" },
       { title: "FabFix", tag: "Aditivo Cimentício", img: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`, slug: "fabfix-aditivo-para-contrapiso-cimenticio" },
     ],
   },
@@ -481,9 +481,47 @@ export const products: Product[] = [
     ],
     surfaces: ["Contrapiso cimentício", "Concreto"],
     related: [
+      { title: "FabFlex 3000", tag: "Flexibilidade elevada", img: `${BASE}/Fab Flex 3000.webp`, slug: "fabflex-3000-impermeabilizante-flexivel" },
       { title: "FabFlex Primer Epóxi", tag: "Primer Epóxi", img: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, slug: "fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
       { title: "FabFix", tag: "Aditivo Cimentício", img: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`, slug: "fabfix-aditivo-para-contrapiso-cimenticio" },
-      { title: "FabFlex Safe Deck", tag: "Proteção para Madeira", img: `${BASE}/6710793c5670e37391f570d40dbe7496-8.png`, slug: "fabflex-impermeabilizante-para-madeira-safe-deck" },
+    ],
+  },
+  {
+    slug: "fabflex-3000-impermeabilizante-flexivel",
+    title: "FabFlex 3000",
+    tag: "Flexibilidade elevada",
+    tagColor: "#007800",
+    category: "Impermeabilizantes",
+    image: `${BASE}/Fab Flex 3000.webp`,
+    description:
+      "Impermeabilizante flexível de poliuretano bicomponente para diferentes aplicações. Desenvolvido para acompanhar os movimentos das superfícies e oferecer proteção duradoura contra a umidade.",
+    specs: [
+      { label: "Tipo", value: "Impermeabilizante flexível de poliuretano bicomponente" },
+      { label: "Componente A", value: "Poliol vegetal" },
+      { label: "Componente B", value: "Isocianato" },
+      { label: "Resistência à umidade", value: "Alta" },
+      { label: "Cor", value: "Cinza" },
+    ],
+    features: [
+      { title: "Membrana monolítica", desc: "Forma uma camada contínua, sem emendas ou juntas." },
+      { title: "Flexibilidade elevada", desc: "Acompanha os movimentos da superfície, mantendo a proteção." },
+      { title: "Alta aderência", desc: "Adere a diversos tipos de substratos, contribuindo com a impermeabilização." },
+      { title: "Aplicação a frio", desc: "Simplifica o processo, sem necessidade de aquecimento." },
+      { title: "Resistência e durabilidade", desc: "Resiste à umidade e à ação dos raios UV." },
+      { title: "Dispensa proteção mecânica", desc: "Mais agilidade e praticidade na execução." },
+    ],
+    steps: [
+      { n: "01", title: "Preparação da superfície", desc: "Certifique-se de que ela esteja limpa, seca e livre de óleos, graxas e partículas soltas, além de regularizada, com caimento adequado e completamente curada. Realize o selamento com FabFlex 700 ou FabFix 500, conforme especificação do sistema, e aguarde o tempo de cura indicado." },
+      { n: "02", title: "Preparação da mistura", desc: "Adicione o componente B ao componente A e misture com furadeira equipada com hélice misturadora por 3 a 5 minutos, até obter uma mistura homogênea." },
+      { n: "03", title: "Primeira demão", desc: "Aplique a primeira demão com rolo de lã de carneiro de cerdas curtas ou rodo, respeitando o consumo e a espessura especificados para a aplicação." },
+      { n: "04", title: "Demãos seguintes", desc: "Aplique de 3 a 4 demãos, respeitando o intervalo de secagem entre elas e os consumos mínimos recomendados. Não ultrapasse 24 horas entre demãos; caso o período seja excedido, realize lixamento geral da base para promover aderência mecânica entre as camadas." },
+      { n: "05", title: "Acabamento", desc: "Em áreas que receberão acabamento cerâmico ou outros revestimentos, realize a aspersão de quartzo #30 junto com a última demão, conforme especificação técnica, para favorecer a aderência do revestimento." },
+    ],
+    surfaces: ["Concreto", "Contrapisos cimentícios", "Argamassas de regularização"],
+    related: [
+      { title: "FabFlex 700", tag: "Contrapiso", img: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, slug: "fabflex-impermeabilizante-de-contrapiso" },
+      { title: "FabFix", tag: "Aditivo Cimentício", img: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`, slug: "fabfix-aditivo-para-contrapiso-cimenticio" },
+      { title: "FabFlex Primer Epóxi", tag: "Primer Epóxi", img: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, slug: "fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
     ],
   },
   {
@@ -518,6 +556,7 @@ export const products: Product[] = [
     surfaces: ["Contrapiso cimentício", "Argamassa cimentícia"],
     related: [
       { title: "FabFlex 700", tag: "Contrapiso", img: `${BASE}/ea27556fae4c71df9dbf0489e149c327-2.png`, slug: "fabflex-impermeabilizante-de-contrapiso" },
+      { title: "FabFlex 3000", tag: "Flexibilidade elevada", img: `${BASE}/Fab Flex 3000.webp`, slug: "fabflex-3000-impermeabilizante-flexivel" },
       { title: "FabFlex Primer Epóxi", tag: "Primer Epóxi", img: `${BASE}/2bd6f196ae588abe7f79e0a2a9ffa340-7.png`, slug: "fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
     ],
   },
