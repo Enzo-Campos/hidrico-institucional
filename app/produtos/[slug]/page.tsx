@@ -7,6 +7,7 @@ import ProductVideoSection from "../../components/ProductVideoSection";
 import Breadcrumb from "../../components/Breadcrumb";
 
 function getColorChart(slug: string): string | null {
+  if (slug === "fabcol-ms-h410") return null;
   if (slug.startsWith("fabcol-")) return "/assets/hq-catalogo-cores_digital_colas.jpg";
   if (slug.startsWith("fabmell-")) return "/assets/hq-catalogo-cores_digital_massas.png";
   return null;
