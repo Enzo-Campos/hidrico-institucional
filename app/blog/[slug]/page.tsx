@@ -23,6 +23,36 @@ export async function generateMetadata({
   };
 }
 
+function renderTextWithInlineLinks(
+  text: string,
+  inlineLinks: { text: string; href: string }[] | undefined,
+  color: string
+) {
+  if (!inlineLinks || inlineLinks.length === 0) return text;
+
+  const pattern = new RegExp(
+    `(${inlineLinks.map((l) => l.text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`
+  );
+  const parts = text.split(pattern);
+
+  return parts.map((part, i) => {
+    const link = inlineLinks.find((l) => l.text === part);
+    if (!link) return part;
+    return (
+      <a
+        key={i}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-bold underline underline-offset-2"
+        style={{ color }}
+      >
+        {part}
+      </a>
+    );
+  });
+}
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -94,7 +124,26 @@ export default async function BlogPostPage({
                   {section.heading && (
                     <h2 className="text-xl font-extrabold text-gray-900 mb-3">{section.heading}</h2>
                   )}
-                  <p className="text-base text-gray-600 leading-relaxed">{section.text}</p>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {renderTextWithInlineLinks(section.text, section.inlineLinks, color)}
+                  </p>
+                  {section.image && (
+                    <figure className="mt-6 w-full">
+                      <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+                        <Image
+                          src={section.image.src}
+                          alt={section.image.alt}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      {section.image.caption && (
+                        <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                          {section.image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
                   {section.items && section.items.length > 0 && (
                     <ul className="mt-4 flex flex-col gap-2">
                       {section.items.map((item) => (

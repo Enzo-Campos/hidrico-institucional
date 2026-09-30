@@ -3,6 +3,8 @@ export interface BlogSection {
   text: string;
   links?: { label: string; href: string }[];
   items?: { label: string; text: string }[];
+  image?: { src: string; alt: string; caption?: string };
+  inlineLinks?: { text: string; href: string }[];
 }
 
 export interface BlogPost {
@@ -88,6 +90,9 @@ export const posts: BlogPost[] = [
       {
         heading: "FabFlex 3000: uma nova alternativa para impermeabilização",
         text: "Para ampliar as possibilidades de proteção contra a umidade, a Hídrico Química apresenta o FabFlex 3000, novo integrante da Linha FabFlex.",
+        inlineLinks: [
+          { text: "Linha FabFlex", href: "https://www.hidricoquimica.com.br/produtos" },
+        ],
       },
       {
         text: "O lançamento é um impermeabilizante de poliuretano bicomponente e isento de solventes, que forma uma membrana monolítica e flexível, com alta aderência e aplicação a frio.",
@@ -100,6 +105,10 @@ export const posts: BlogPost[] = [
       },
       {
         text: "Com a novidade, a Linha FabFlex passa a oferecer mais uma opção para profissionais que buscam alternativas de impermeabilização de acordo com as necessidades de cada projeto.",
+        image: {
+          src: "/assets/BLOG IMAGENS/hidrico_capa-de-blog_fab-flez-3000.webp",
+          alt: "FabFlex 3000, impermeabilizante de poliuretano bicomponente da Hídrico Química",
+        },
       },
       {
         heading: "Outras opções da linha FabFlex",
@@ -110,6 +119,13 @@ export const posts: BlogPost[] = [
       },
       {
         text: "A escolha entre as alternativas deve levar em conta as características da obra, as condições da superfície e o resultado esperado. A orientação técnica da nossa equipe contribui para definir o produto mais adequado para cada cenário.",
+        inlineLinks: [
+          { text: "orientação técnica", href: "https://www.hidricoquimica.com.br/manuais" },
+        ],
+        image: {
+          src: "/assets/BLOG IMAGENS/fabflex e fabfix.webp",
+          alt: "Linha FabFlex e FabFix da Hídrico Química",
+        },
       },
       {
         heading: "Prevenção faz parte de uma boa obra",
@@ -182,20 +198,41 @@ export const posts: BlogPost[] = [
       {
         heading: "Mais resistência com o FabFix",
         text: "Durante a execução, o uso de aditivos específicos contribui para melhorar a resistência e a uniformidade do contrapiso. O FabFix foi desenvolvido para essa finalidade, favorecendo uma base mais resistente, melhor aderência ao revestimento e maior consistência na aplicação.",
+        inlineLinks: [
+          { text: "O FabFix", href: "https://www.hidricoquimica.com.br/produtos/fabfix-aditivo-para-contrapiso-cimenticio" },
+        ],
+        image: {
+          src: "/assets/BLOG IMAGENS/fabfix 500 resina multifuncional.webp",
+          alt: "FabFix 500, resina multifuncional da Hídrico Química",
+        },
       },
       {
         heading: "O controle da umidade faz toda a diferença",
         text: "Mesmo um contrapiso resistente pode apresentar problemas quando não recebe proteção contra a umidade ascendente. O FabFlex 700 atua nessa etapa, contribuindo para impermeabilizar o contrapiso antes da instalação do revestimento e reduzir riscos como bolhas, desplacamentos e perda de aderência.",
+        inlineLinks: [
+          { text: "O FabFlex 700", href: "https://www.hidricoquimica.com.br/produtos/fabflex-impermeabilizante-de-contrapiso" },
+        ],
       },
       {
         text: "Essa etapa preventiva minimiza riscos futuros e aumenta a confiabilidade do processo.",
+        image: {
+          src: "/assets/BLOG IMAGENS/fabflex 700 impermeabilizante.webp",
+          alt: "FabFlex 700, impermeabilizante de contrapiso da Hídrico Química",
+        },
       },
       {
         heading: "Preparação adequada melhora a aderência",
         text: "A preparação do contrapiso também influencia a aderência entre as camadas. O FabFlex Primer Epóxi auxilia nessa etapa ao bloquear a umidade, oferecer alta resistência química e proporcionar excelente aderência em diferentes substratos.",
+        inlineLinks: [
+          { text: "O FabFlex Primer Epóxi", href: "https://www.hidricoquimica.com.br/produtos/fabflex-impermeabilizante-de-contrapiso-primer-epoxi" },
+        ],
       },
       {
         text: "Com isso, cria uma base mais segura e adequada para receber o sistema, aumentando a estabilidade do conjunto.",
+        image: {
+          src: "/assets/BLOG IMAGENS/fabflex primer epoxi.webp",
+          alt: "FabFlex Primer Epóxi da Hídrico Química",
+        },
       },
       {
         heading: "A análise do contrapiso reduz riscos futuros",
@@ -216,6 +253,9 @@ export const posts: BlogPost[] = [
       },
       {
         text: "Conheça as soluções da Hídrico Química e descubra como preparar sua obra com mais eficiência. Aqui no blog, você pode conferir outros conteúdos sobre aplicação, preparação e soluções técnicas para auxiliar suas decisões em diferentes etapas do projeto.",
+        inlineLinks: [
+          { text: "blog", href: "https://www.hidricoquimica.com.br/blog" },
+        ],
       },
       {
         heading: "Saiba mais",
