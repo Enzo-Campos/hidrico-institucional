@@ -30,6 +30,132 @@ export const CATEGORY_BG: Record<string, string> = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "como-umidade-influencia-comportamento-da-madeira",
+    category: "Dicas",
+    title: "Como a umidade influencia o comportamento da madeira",
+    excerpt:
+      "A madeira é um material natural que responde às condições do ambiente, principalmente às variações de umidade. Entenda como isso pode interferir no sistema e conheça o FabFlex 3000, novo impermeabilizante da Hídrico Química.",
+    date: "30 Set 2026",
+    readTime: "6 min",
+    cover: "/assets/CAPA BLOG/hidrico_capa-de-blog_piso-estragado.webp",
+    content: [
+      {
+        text: "A madeira é um material natural que responde às condições do ambiente, principalmente às variações de umidade. Entender esse comportamento é essencial para evitar problemas e garantir instalações mais estáveis e duradouras. Continue a leitura e descubra como a umidade pode interferir na madeira e quais cuidados ajudam a preservar o desempenho do sistema.",
+      },
+      {
+        heading: "O comportamento natural da madeira",
+        text: "A madeira é um material que possui a capacidade de absorver e liberar umidade conforme as condições do ambiente. Esse processo acontece naturalmente ao longo de toda a vida útil e influencia diretamente suas dimensões e estabilidade.",
+      },
+      {
+        text: "Quando a umidade do ambiente aumenta, a madeira tende a absorver a água presente no ar e expandir. Já em períodos mais secos, ocorre o processo inverso: a perda de umidade faz com que ela retraia. Essas movimentações são esperadas e fazem parte das características naturais do material.",
+      },
+      {
+        text: "Por isso, conhecer o seu comportamento é fundamental para planejar corretamente sua aplicação e considerar as condições às quais o revestimento estará exposto.",
+      },
+      {
+        heading: "Como a umidade pode afetar a instalação",
+        text: "Embora a movimentação da madeira seja natural, níveis inadequados de umidade podem interferir no resultado.",
+      },
+      {
+        text: "Quando o revestimento é aplicado sobre uma base que ainda apresenta umidade residual ou não recebeu a preparação necessária, a água pode migrar para o sistema e provocar alterações dimensionais. Entre as possíveis consequências estão frestas, estufamentos, empenamentos, perda de aderência e descolamentos.",
+      },
+      {
+        text: "Nem sempre esses problemas aparecem logo após a execução. Algumas manifestações podem surgir semanas ou meses depois, dificultando a identificação da causa e aumentando a necessidade de intervenções.",
+      },
+      {
+        text: "Assim, as condições do local devem ser avaliadas antes do início do trabalho, considerando não apenas a madeira, mas também a superfície que receberá o revestimento.",
+      },
+      {
+        heading: "A umidade nem sempre é visível",
+        text: "Um dos desafios relacionados à umidade em obras é justamente a dificuldade de identificá-la visualmente.",
+      },
+      {
+        text: "Um contrapiso pode aparentar estar seco e, ainda assim, apresentar umidade residual capaz de comprometer materiais aplicados posteriormente. A situação merece atenção especial em obras novas, ambientes térreos e locais sujeitos à umidade ascendente.",
+      },
+      {
+        text: "Nesses casos, a avaliação técnica da superfície é uma etapa importante para identificar possíveis riscos antes da instalação. Esse cuidado também ajuda a definir quais procedimentos e materiais são mais adequados para cada situação, evitando que uma condição pouco perceptível comprometa todo o resultado.",
+      },
+      {
+        heading: "Preparar a base é parte do processo",
+        text: "A qualidade de uma instalação não depende apenas do revestimento escolhido. A condição da base também exerce papel importante.",
+      },
+      {
+        text: "Limpeza, regularização e verificação da superfície são etapas que contribuem para uma boa aderência e para o funcionamento adequado do sistema. Quando há presença ou possibilidade de umidade, podem ser necessários produtos específicos para preparar e proteger a área antes da aplicação do revestimento.",
+      },
+      {
+        text: "É nesse momento que a especificação técnica ganha importância. Em vez de adotar uma solução única para diferentes situações, é preciso considerar as características da obra, o tipo de superfície e a exposição à água e à umidade.",
+      },
+      {
+        heading: "FabFlex 3000: uma nova alternativa para impermeabilização",
+        text: "Para ampliar as possibilidades de proteção contra a umidade, a Hídrico Química apresenta o FabFlex 3000, novo integrante da Linha FabFlex.",
+      },
+      {
+        text: "O lançamento é um impermeabilizante de poliuretano bicomponente e isento de solventes, que forma uma membrana monolítica e flexível, com alta aderência e aplicação a frio.",
+      },
+      {
+        text: "Sua formulação foi desenvolvida para acompanhar as características das superfícies, proporcionando uma camada contínua de proteção. O produto também apresenta excelente durabilidade, resistência aos raios UV e dispensa proteção mecânica.",
+      },
+      {
+        text: "O FabFlex 3000 pode ser utilizado em diferentes aplicações, como áreas frias, cozinhas, banheiros, varandas, áreas de serviço, piscinas, reservatórios de água e calhas de concreto.",
+      },
+      {
+        text: "Com a novidade, a Linha FabFlex passa a oferecer mais uma opção para profissionais que buscam alternativas de impermeabilização de acordo com as necessidades de cada projeto.",
+      },
+      {
+        heading: "Outras opções da linha FabFlex",
+        text: "O FabFlex 3000 chega para complementar um portfólio que já conta com produtos destinados a diferentes etapas e condições de aplicação.",
+      },
+      {
+        text: "Entre eles está o FabFlex Primer Epóxi, indicado para situações que exigem uma barreira contra a umidade antes da instalação de revestimentos. O FabFlex 700 e o FabFlex Safe Deck também fazem parte da linha e atendem a outras necessidades de proteção e preparação.",
+      },
+      {
+        text: "A escolha entre as alternativas deve levar em conta as características da obra, as condições da superfície e o resultado esperado. A orientação técnica da nossa equipe contribui para definir o produto mais adequado para cada cenário.",
+      },
+      {
+        heading: "Prevenção faz parte de uma boa obra",
+        text: "Problemas relacionados à umidade podem representar custos adicionais quando só são identificados depois da instalação. Por isso, antecipar possíveis condições adversas é uma maneira de reduzir intervenções futuras.",
+      },
+      {
+        text: "Avaliar a superfície, verificar os níveis de umidade e especificar materiais compatíveis com cada aplicação são medidas que ajudam a preservar a integridade do sistema.",
+      },
+      {
+        text: "Mais do que uma etapa preparatória, esse cuidado faz parte de uma visão completa da obra, na qual cada componente precisa trabalhar de forma adequada com os demais.",
+      },
+      {
+        heading: "Um bom resultado começa antes da instalação",
+        text: "A relação entre umidade e madeira faz parte das características naturais do material. O desafio está em compreender essa dinâmica e considerar seus efeitos desde o planejamento até a execução.",
+      },
+      {
+        text: "Quando a base é corretamente avaliada e as soluções são escolhidas de acordo com as condições do projeto, é possível reduzir riscos e contribuir para uma instalação mais consistente.",
+      },
+      {
+        text: "Com o lançamento do FabFlex 3000, a Hídrico Química amplia sua linha de impermeabilizantes e oferece uma nova alternativa para diferentes aplicações na construção civil. Afinal, uma boa proteção começa na base.",
+      },
+      {
+        heading: "Saiba mais",
+        text: "Conheça o FabFlex 3000 e outras soluções da linha FabFlex:",
+        links: [
+          {
+            label: "FabFlex 3000",
+            href: "/produtos/fabflex-3000-impermeabilizante-flexivel",
+          },
+          {
+            label: "FabFlex Primer Epóxi",
+            href: "/produtos/fabflex-impermeabilizante-de-contrapiso-primer-epoxi",
+          },
+          {
+            label: "FabFlex Safe Deck",
+            href: "/produtos/fabflex-impermeabilizante-para-madeira-safe-deck",
+          },
+          {
+            label: "O impacto do contrapiso no desempenho do piso",
+            href: "/blog/impacto-do-contrapiso-no-desempenho-do-piso",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "impacto-do-contrapiso-no-desempenho-do-piso",
     category: "Dicas",
     title: "O impacto do contrapiso no desempenho do piso",
