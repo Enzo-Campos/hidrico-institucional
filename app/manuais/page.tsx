@@ -119,7 +119,7 @@ const allProducts: ProductEntry[] = [
   {
     id: "fabfix", category: "aditivos",
     product: "FabFix Aditivo para Contrapiso Cimentício", tag: "Aditivo Cimentício", slug: "fabfix-aditivo-para-contrapiso-cimenticio",
-    boletim: { file: "/assets/fabfix-500-boletim-tecnico-rev0523.pdf", rev: "Mai/23" },
+    boletim: { file: "/assets/BOLETINS/FabFix 500/FABFIX 500 Boletim Tecnico.pdf" },
     fds: [{ label: "FDS", file: "/assets/FDS/Fabfix/FDS_Hidrico_Quimica_FabFix500_.pdf" }],
   },
   // ── Outros ──
@@ -138,7 +138,7 @@ const allProducts: ProductEntry[] = [
   {
     id: "fabmell", category: "outros",
     product: "FabMell Massa Acrílica para Madeira P51", tag: "Massa Acrílica", slug: "fabmell-massa-acrilica-para-madeira-p51",
-    boletim: { file: "/assets/BOLETINS/FabMell/Cópia de FABMELL· Boletim Técnico.pdf" },
+    boletim: { file: "/assets/BOLETINS/FabMell/FABMELL P51 Boletim Tecnico.pdf" },
     fds: [{ label: "FDS", file: "/assets/FDS/FabMell/FDS_Hidrico_Quimica_FabMell_Massa_Fixa_P51.pdf" }],
   },
   {

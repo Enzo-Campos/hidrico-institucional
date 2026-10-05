@@ -381,6 +381,7 @@ export const products: Product[] = [
     tagColor: "#007800",
     category: "Calafetos",
     image: `${BASE}/f460d9420f163c384572d4c15aaa3f18-11.png`,
+    fichaTecnica: "/assets/BOLETINS/FabMell/FABMELL P51 Boletim Tecnico.pdf",
     description:
       "Massa acrílica para reparo de superfícies de madeira e preenchimento de juntas de pisos. Formulada com emulsão acrílica de alta qualidade. Sem odor, fácil lixamento e múltiplas cores disponíveis.",
     specs: [
@@ -531,7 +532,7 @@ export const products: Product[] = [
     tagColor: "#007800",
     category: "Aditivos para Contra Pisos",
     image: `${BASE}/27b021d5fa9c60e91d9cefa058470993-1.png`,
-    fichaTecnica: "/assets/fabfix-500-boletim-tecnico-rev0523.pdf",
+    fichaTecnica: "/assets/BOLETINS/FabFix 500/FABFIX 500 Boletim Tecnico.pdf",
     description:
       "Aditivo para melhoria de contrapisos cimentícios com maior aderência, durabilidade e facilidade de aplicação. Mistura direta no contrapiso — sem etapa adicional de obra.",
     specs: [
