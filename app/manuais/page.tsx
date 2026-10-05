@@ -156,28 +156,28 @@ const allProducts: ProductEntry[] = [
     id: "fabgrip-3k", category: "vinilicos",
     product: "FabGrip 3K", tag: "Alta Aderência", slug: "fabgrip-3k",
     boletim: { file: "/assets/BOLETINS/FabGrip 3K/Cópia de FICHA TÉCNICA PRIMER SOBREPOSICAO GRIP.pdf" },
-    fds: [{ label: "FDS", file: "/assets/FDS/FabGrip 3K/Cópia de FDS PRIMER SOBREPOSICAO GRIP.pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/FabGrip 3K/FDS_Hidrico_Quimica_Fab Grip 3K.pdf" }],
   },
   {
     id: "fabprimer-3k", category: "vinilicos",
     product: "FabPrimer 3K", tag: "Alto Rendimento", slug: "fabprimer-3k",
     boletim: { file: "/assets/BOLETINS/FabPrimer 3K/Cópia de FICHA TÉCNICA PRIME BASE.pdf" },
-    fds: [{ label: "FDS", file: "/assets/FDS/FabPrimer 3K/Cópia de FDS PRIME BASE.pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/FabPrimer 3K/FDS_Hidrico_Quimica_Fab Primer 3K.pdf" }],
   },
   {
     id: "fabblock-793", category: "vinilicos",
     product: "FabBlock 793", tag: "Barreira de Umidade", slug: "fabblock-793",
     boletim: { file: "/assets/BOLETINS/FabBlock 793/Cópia de FICHA TÉCNICA BLOQUEADOR DE VAPOR DE UMIDADE (1).pdf" },
     fds: [
-      { label: "Comp. A", file: "/assets/FDS/FabBlock 793/Cópia de FDS Bloqueador de Vapor de Umidade A (1).pdf" },
-      { label: "Comp. B", file: "/assets/FDS/FabBlock 793/Cópia de FDS Bloqueador de Vapor de Umidade B (1).pdf" },
+      { label: "Comp. A", file: "/assets/FDS/FabBlock 793/FDS_Hidrico_Quimica_Fab Block 793_Componente A.pdf" },
+      { label: "Comp. B", file: "/assets/FDS/FabBlock 793/FDS_Hidrico_Quimica_Fab Block 793_Componente B.pdf" },
     ],
   },
   {
     id: "fabvinil-501", category: "vinilicos",
     product: "FabVinil 501", tag: "Fixação Imediata", slug: "fabvinil-501",
     boletim: { file: "/assets/BOLETINS/FabVinil 501/Cópia de FICHA TÉCNICA ADESIVO PARA PISOS VINILICOS.pdf" },
-    fds: [{ label: "FDS", file: "/assets/FDS/FabVinil 501/Cópia de FDS ADESIVO PARA PISOS VINILICOS (1).pdf" }],
+    fds: [{ label: "FDS", file: "/assets/FDS/FabVinil 501/FDS_Hidrico_Quimica_Fab Vinil 501.pdf" }],
   },
 ];
 
