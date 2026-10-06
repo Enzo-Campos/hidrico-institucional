@@ -139,7 +139,7 @@ export const products: Product[] = [
   },
   {
     slug: "fabcol-cola-para-grama-sintetica",
-    title: "FabCol FabCol PU Grama Sintética",
+    title: "FabCol PU Grama Sintética",
     tag: "Cola PU",
     tagColor: "#007800",
     category: "Cola para Grama Sintética",
