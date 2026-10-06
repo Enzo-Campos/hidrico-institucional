@@ -146,7 +146,7 @@ export default async function ProductPage({
             Diferenciais
           </p>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
-            Por que escolher o <span style={{ color: "#007800" }}>{p.title.split(" ").slice(0, 2).join(" ")}</span>?
+            Por que escolher o <span style={{ color: "#007800" }}>{p.title}</span>?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {p.features.map((f) => (
